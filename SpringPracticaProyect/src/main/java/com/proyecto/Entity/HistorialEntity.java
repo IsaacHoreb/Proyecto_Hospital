@@ -1,5 +1,6 @@
 package com.proyecto.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ public class HistorialEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @NotBlank(message = "La fecha de creacion no puede estar vacio...")
     @Column(name = "date_created", columnDefinition = "DATE", nullable = false)
     private LocalDate dateCreated;
