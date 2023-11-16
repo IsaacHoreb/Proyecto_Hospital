@@ -1,0 +1,14 @@
+package com.proyecto.Entity.enums;
+
+public enum EName {
+    MEDICINA_INTERNA,
+    CIRUGIA_GENERAL,
+    PEDIATRIA,
+    GINECOLOGIA_OBSTETRICIA,
+    CARDIOLOGIA,
+    ORTOPEDIA,
+    DERMATOLOGIA,
+    NEUROLOGIA,
+    OFTALMOLOGIA,
+    UROLOGIA
+}
