@@ -41,4 +41,13 @@ public class CitasEntity {
     @Column(name = "stated", columnDefinition = "VARCHAR(10)", nullable = false)
     private EEstado stated;
 
+    @OneToOne(targetEntity = PacienteEntity.class)
+    private PacienteEntity paciente;
+
+    @OneToOne(targetEntity = MedicoEntity.class)
+    private MedicoEntity medico;
+
+    @ManyToOne(targetEntity = SalasEntity.class, fetch = FetchType.LAZY)
+    private SalasEntity sala;
+
 }

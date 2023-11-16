@@ -10,6 +10,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,7 +33,7 @@ public class MedicoEntity {
     private String lastName;
 
     @NotBlank(message = "La edad no puede estar vacio...")
-    @Column(name = "age",columnDefinition = "INT(11)", nullable = false)
+    @Column(name = "age", columnDefinition = "INT(11)", nullable = false)
     private Integer age;
 
     @NotNull(message = "La especialidad no puede estar vacio...")
@@ -58,5 +60,8 @@ public class MedicoEntity {
     @NotNull(message = "El horario de terminacion no puede estar vacio...")
     @Column(name = "end_time", columnDefinition = "TIME", nullable = false)
     private LocalTime endTime;
+
+    @OneToMany(targetEntity = CitasEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "medico")
+    private Set<CitasEntity> citas = new HashSet<>();
 
 }

@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -20,6 +23,14 @@ public class SalasEntity {
 
     @Enumerated(EnumType.STRING)
     @NotNull(message = "El tipo de sala no puede estar vacio...")
-    @Column(name = "tipo", columnDefinition = "VARCHAR(15)", nullable = false)
-    private ETipo tipo;
+    @Column(name = "type", columnDefinition = "VARCHAR(15)", nullable = false)
+    private ETipo type;
+
+    @OneToMany(targetEntity = CitasEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "sala")
+    private Set<CitasEntity> citas = new HashSet<>();
+
+    @OneToOne(targetEntity = DepartamentosEntity.class)
+    private DepartamentosEntity departamento;
+
+
 }

@@ -10,6 +10,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -51,5 +53,9 @@ public class PacienteEntity {
     @NotBlank(message = "El historial medico no puede estar vacio...")
     @Column(name = "medical_historial", columnDefinition = "VARCHAR(100)", nullable = false)
     private String MedicalHistory;
+
+    @OneToMany(targetEntity = CitasEntity.class, mappedBy = "paciente",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<CitasEntity> citas = new HashSet<>();
+
 
 }

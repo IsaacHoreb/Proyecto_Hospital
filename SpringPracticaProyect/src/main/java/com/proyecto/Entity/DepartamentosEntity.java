@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -27,5 +30,12 @@ public class DepartamentosEntity {
     @NotBlank(message = "La descripcion no puede estar vacio...")
     @Column(name = "description", columnDefinition = "VARCHAR(50)", nullable = false)
     private String description;
+
+    @OneToOne(targetEntity = MedicoEntity.class)
+    private Set<MedicoEntity> medico = new HashSet<>();
+
+    @OneToMany(targetEntity = SalasEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "departamento")
+    private Set<SalasEntity> salas = new HashSet<>();
+
 
 }

@@ -36,4 +36,11 @@ public class HistorialEntity {
     @Column(name = "medical_notes", columnDefinition = "VARCHAR(35)")
     private String medicalNotes;
 
+    @OneToOne(targetEntity = PacienteEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private PacienteEntity paciente;
+
+    @ManyToOne(targetEntity = MedicoEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private MedicoEntity medico;
+
+
 }
