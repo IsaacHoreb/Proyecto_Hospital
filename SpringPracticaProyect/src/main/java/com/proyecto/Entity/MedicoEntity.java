@@ -32,11 +32,13 @@ public class MedicoEntity {
     @Column(name = "last_name", columnDefinition = "VARCHAR(25)", nullable = false)
     private String lastName;
 
-    @NotBlank(message = "La edad no puede estar vacio...")
+    @NotNull(message = "La edad no puede estar vacio...")
     @Column(name = "age", columnDefinition = "INT(11)", nullable = false)
     private Integer age;
 
+
     @NotNull(message = "La especialidad no puede estar vacio...")
+    @Enumerated(EnumType.STRING)
     @Column(name = "especialization", columnDefinition = "VARCHAR(15)", nullable = false)
     private EEspecialidad especialization;
 

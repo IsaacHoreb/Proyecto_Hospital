@@ -3,7 +3,6 @@ package com.proyecto.services.impl;
 import com.proyecto.Entity.MedicoEntity;
 import com.proyecto.repository.MedicoRepository;
 import com.proyecto.services.MedicoServices;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,7 @@ public class MedicoServicesImpl implements MedicoServices {
         MedicoEntity medicoNuevo = null; //Guardamos el medico
 
         //Condicion
-        if ((localName == null) && (localLastName == null)) {
+        if ((localName == null) || (localLastName == null)) {
             //Si no existe en el repositorio
             medicoNuevo = medicoRepository.save(medico);
             return ResponseEntity.ok(medicoNuevo);
@@ -91,7 +90,7 @@ public class MedicoServicesImpl implements MedicoServices {
 
         if (local != null) {
             medicoRepository.deleteById(id);
-            return ResponseEntity.ok("El medico con el id: " + id + " ha sido eliminado con éxito...");
+            return ResponseEntity.ok("El medico con el id: " + id + " \nha sido eliminado con éxito...");
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ha sucedido algun error al intentar eliminar\nVefirique sus datos...");
         }
