@@ -32,7 +32,7 @@ public class PacienteEntity {
     @Column(name = "last_name", columnDefinition = "VARCHAR(26)", nullable = false)
     private String lastName;
 
-    @NotBlank(message = "La fecha de nacimiento no puede estar vacio...")
+    @NotNull(message = "La fecha de nacimiento no puede estar vacio...")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_birth", columnDefinition = "DATE", nullable = false)
     private LocalDate dateBirth;
@@ -52,7 +52,7 @@ public class PacienteEntity {
 
     @NotBlank(message = "El historial medico no puede estar vacio...")
     @Column(name = "medical_historial", columnDefinition = "VARCHAR(100)", nullable = false)
-    private String MedicalHistory;
+    private String medicalHistory;
 
     @OneToMany(targetEntity = CitasEntity.class, mappedBy = "paciente",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<CitasEntity> citas = new HashSet<>();
