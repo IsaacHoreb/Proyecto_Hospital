@@ -44,7 +44,7 @@ public class CitasEntity {
     @OneToOne(targetEntity = PacienteEntity.class)
     private PacienteEntity paciente;
 
-    @OneToOne(targetEntity = MedicoEntity.class)
+    @ManyToOne(targetEntity = MedicoEntity.class,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private MedicoEntity medico;
 
     @ManyToOne(targetEntity = SalasEntity.class, fetch = FetchType.LAZY)

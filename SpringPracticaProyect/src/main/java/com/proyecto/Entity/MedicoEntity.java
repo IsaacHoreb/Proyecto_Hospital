@@ -66,4 +66,7 @@ public class MedicoEntity {
     @OneToMany(targetEntity = CitasEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "medico")
     private Set<CitasEntity> citas = new HashSet<>();
 
+    @OneToOne(targetEntity = DepartamentosEntity.class)
+    private DepartamentosEntity departamentos;
+
 }

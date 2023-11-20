@@ -24,18 +24,17 @@ public class DepartamentosEntity {
 
     @NotNull(message = "El nombre del departamento no puede estar vacio...")
     @Enumerated(EnumType.STRING)
-    @Column(name = "name_department", columnDefinition = "VARCHAR(15)", nullable = false)
+    @Column(name = "name_department", columnDefinition = "VARCHAR(15)", nullable = false, unique = true)
     private EName nameDepartment;
 
     @NotBlank(message = "La descripcion no puede estar vacio...")
-    @Column(name = "description", columnDefinition = "VARCHAR(50)", nullable = false)
+    @Column(name = "description", columnDefinition = "VARCHAR(100)", nullable = false)
     private String description;
 
-    @OneToOne(targetEntity = MedicoEntity.class)
+    @OneToMany(targetEntity = MedicoEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "departamentos")
     private Set<MedicoEntity> medico = new HashSet<>();
 
     @OneToMany(targetEntity = SalasEntity.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "departamento")
     private Set<SalasEntity> salas = new HashSet<>();
-
 
 }
