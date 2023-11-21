@@ -24,11 +24,11 @@ public class CitasEntity {
     private Long id;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @NotBlank(message = "La fecha no puede estar vacio...")
+    @NotNull(message = "La fecha no puede estar vacio...")
     @Column(name = "date", columnDefinition = "DATE", nullable = false)
     private LocalDate date;
 
-    @NotBlank(message = "La hora no puede estar vacio...")
+    @NotNull(message = "La hora no puede estar vacio...")
     @Column(name = "hour", columnDefinition = "TIME", nullable = false)
     private LocalTime hour;
 
