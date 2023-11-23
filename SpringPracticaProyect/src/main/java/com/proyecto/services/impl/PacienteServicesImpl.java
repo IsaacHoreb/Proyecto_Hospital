@@ -18,16 +18,13 @@ public class PacienteServicesImpl implements PacienteServices {
     public ResponseEntity<PacienteEntity> guardarPaciente(PacienteEntity paciente) throws Exception {
 
         //Obtener el nombre y el apellido
-        PacienteEntity localName = pacienteRepository.findByName(paciente.getName())
-                .orElse(null);
-
-        PacienteEntity localLastName = pacienteRepository.findByLastName(paciente.getLastName())
+        PacienteEntity existPaciente = pacienteRepository.findByNameAndLastName(paciente.getName(), paciente.getLastName())
                 .orElse(null);
 
         PacienteEntity pacienteNuevo = null; //Guardar los datos creados
 
         //Condicion
-        if ((localName == null) || (localLastName == null)) {
+        if (existPaciente == null) {
             pacienteNuevo = pacienteRepository.save(paciente);
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
