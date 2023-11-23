@@ -16,18 +16,26 @@ public class MedicoServicesImpl implements MedicoServices {
 
     @Override
     public ResponseEntity<MedicoEntity> guardarMedico(MedicoEntity medico) throws Exception {
-
+        /*
         //Obtener el nombre y el apellido
         MedicoEntity localName = medicoRepository.findByName(medico.getName())
                 .orElse(null);
 
         MedicoEntity localLastName = medicoRepository.findByLastName(medico.getLastName())
                 .orElse(null);
+        */
+        //Nombre y apellido especifico y lo lista para comparar
+        MedicoEntity existMedico = medicoRepository.findByNameAndLastName(medico.getName(), medico.getLastName())
+                .orElse(null);
+
+        // Logs para depurar
+        //System.out.println("Existencia de Medico: " + (existMedico != null ? "Sí" : "No"));
 
         MedicoEntity medicoNuevo = null; //Guardamos el medico
+        //assert existMedico != null; //USADO PARA PRUEBAS PERO ES MEJOR  UN '!= NULL'
 
         //Condicion
-        if ((localName == null) || (localLastName == null)) {
+        if (existMedico == null) {
             //Si no existe en el repositorio
             medicoNuevo = medicoRepository.save(medico);
             return ResponseEntity.ok(medicoNuevo);

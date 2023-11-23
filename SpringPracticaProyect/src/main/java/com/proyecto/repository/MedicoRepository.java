@@ -13,4 +13,6 @@ public interface MedicoRepository extends JpaRepository<MedicoEntity, Long> {
 
     Optional<MedicoEntity> findByLastName(String lastName);
 
+    Optional<MedicoEntity> findByNameAndLastName(String name, String lastName); //Buscar ambos
+
 }

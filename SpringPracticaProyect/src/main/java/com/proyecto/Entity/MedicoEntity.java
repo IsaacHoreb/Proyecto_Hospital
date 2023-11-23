@@ -39,7 +39,7 @@ public class MedicoEntity {
 
     @NotNull(message = "La especialidad no puede estar vacio...")
     @Enumerated(EnumType.STRING)
-    @Column(name = "especialization", columnDefinition = "VARCHAR(15)", nullable = false)
+    @Column(name = "especialization", columnDefinition = "VARCHAR(25)", nullable = false)
     private EEspecialidad especialization;
 
     @NotBlank(message = "El telefono no puede estar vacio...")
