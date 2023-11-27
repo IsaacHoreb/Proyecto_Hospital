@@ -22,8 +22,7 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "strictPropertyInitialization":false //Agregamos para quitar el error
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

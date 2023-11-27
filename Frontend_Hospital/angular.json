@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FrontedPractica": {
+    "Frontend_Hospital": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fronted-practica",
+            "outputPath": "dist/frontend-hospital",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FrontedPractica:build:production"
+              "browserTarget": "Frontend_Hospital:build:production"
             },
             "development": {
-              "browserTarget": "FrontedPractica:build:development"
+              "browserTarget": "Frontend_Hospital:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FrontedPractica:build"
+            "browserTarget": "Frontend_Hospital:build"
           }
         },
         "test": {
@@ -94,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "40248074-0b8f-4c2e-b432-28f55777f767"
   }
 }

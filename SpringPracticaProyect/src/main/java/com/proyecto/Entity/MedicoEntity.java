@@ -36,7 +36,6 @@ public class MedicoEntity {
     @Column(name = "age", columnDefinition = "INT(11)", nullable = false)
     private Integer age;
 
-
     @NotNull(message = "La especialidad no puede estar vacio...")
     @Enumerated(EnumType.STRING)
     @Column(name = "especialization", columnDefinition = "VARCHAR(25)", nullable = false)
