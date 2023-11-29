@@ -1,0 +1,34 @@
+<h2>Lista de Medicos</h2>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+
+        <tr>
+            <th>Nombre(s)</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Especialidad</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Direccion</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor= "let medico of medicos">
+            <td>{{medico.name}}</td>
+            <td>{{medico.lastName}}</td>
+            <td>{{medico.age}}</td>
+            <td>{{medico.especialization}}</td>
+            <td>{{medico.phone}}</td>
+            <td>{{medico.email}}</td>
+            <td>{{medico.address}}</td>
+            <td>{{medico.startTime}}</td>
+            <td>{{medico.endTime}}</td>
+
+        </tr>
+    </tbody>
+
+</table>
