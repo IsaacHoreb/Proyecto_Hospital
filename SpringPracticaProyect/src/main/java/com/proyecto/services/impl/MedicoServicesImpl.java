@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class MedicoServicesImpl implements MedicoServices {
 
@@ -103,6 +106,11 @@ public class MedicoServicesImpl implements MedicoServices {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ha sucedido algun error al intentar eliminar\nVefirique sus datos...");
         }
 
+    }
+
+    @Override
+    public List<MedicoEntity> listarMedicos() throws Exception {
+        return medicoRepository.findAll();
     }
 
 }
