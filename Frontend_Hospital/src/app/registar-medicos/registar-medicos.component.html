@@ -40,36 +40,30 @@
 
         <div class="form-group">
             <label>Edad: </label>
-            <input type="text" class="form-control" id="age" [(ngModel)]="medico.age" name="age" required
-                placeholder="Digite su edad" #age="ngModel">
+            <input type="number" class="form-control" id="age" [(ngModel)]="medico.age" name="age" required
+                placeholder="Digite su edad" #age="ngModel" minimo="1" maximo="100">
             <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
                 <div *ngIf="age.errors['required']">
                     Digite su edad por favor
                 </div>
                 <div *ngIf="age.errors['minimo']">
-                    La edad debe ser menor a 1
+                    La edad debe ser igual o mayor a 1
                 </div>
                 <div *ngIf="age.errors['maximo']">
-                    La edad debe ser mayor a mayor a 1
+                    La edad debe ser igual o menor a 100
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <label>Especialidad: </label>
-            <input type="text" class="form-control" id="especialization" [(ngModel)]="medico.especialization"
-                name="especialization" required placeholder="Digite su especialidad " #especialization="ngModel">
-            <div class="alert alert-danger"
-                *ngIf="especialization.invalid && (especialization.dirty || especialization.touched)">
-                <div *ngIf="especialization.errors['required']">
-                    Digite su especialidad por favor
-                </div>
-                <div *ngIf="especialization.errors['minimo']">
-                    La especialidad tiene que contener como minimo 4 numero
-                </div>
-                <div *ngIf="especialization.errors['maximo']">
-                    La especialidad tiene que tener como maximo 10 caracteres
-                </div>
+            <select class="form-control" id="especialization" [(ngModel)]="medico.especialization"
+                name="especialization" required>
+                <option value="" disabled selected>Seleccione una especialidad</option>
+                <option *ngFor="let especialidad of especialization" [value]="especialidad">{{ especialidad }}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="!medico.especialization || medico.especialization.length === 0">
+                Seleccione una especialidad por favor
             </div>
         </div>
 

@@ -6,11 +6,16 @@ export class Medicos {
     name: string;
     lastName: string;
     age: number;
-    especialization: string;
+    especialization: string[];
     phone: string;
     email: string;
     address: string;
     startTime: string;
     endTime: string;
+
+    // Asegurar que el array de especialización tiene solo un elemento
+    setEspecialization(especialization: string) {
+        this.especialization = [especialization];
+    }
 
 }

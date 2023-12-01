@@ -14,6 +14,9 @@ export class RegistarMedicosComponent implements OnInit {
 
   medico: Medicos = new Medicos();
 
+  //Agrego para selecionar las especialidades
+  especialization: string[] = ['CARDIOLOGIA', 'DERMATOLOGIA', 'ENDOCRINOLOGIA', 'GASTROENTEROLOGIA', 'GINECOLOGIA', 'NEUROLOGIA', 'OFTALMOLOGIA', 'ORTOPEDIA', 'PEDIATRIA', 'UROLOGIA'];
+
   constructor(private medicoServicio: MedicoService, private router: Router) { }
 
   guardarMedicos() {
