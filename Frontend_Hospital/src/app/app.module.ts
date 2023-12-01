@@ -7,17 +7,20 @@ import { ListarMedicosComponent } from './listar-medicos/listar-medicos.componen
 
 //Importes de archivos 
 import { HttpClientModule } from '@angular/common/http';
-
+import { RegistarMedicosComponent } from './registar-medicos/registar-medicos.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarMedicosComponent
+    ListarMedicosComponent,
+    RegistarMedicosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //Agregamos 
+    HttpClientModule, //Agregamos 
+    FormsModule //Agrega
   ],
   providers: [],
   bootstrap: [AppComponent]

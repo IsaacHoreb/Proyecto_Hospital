@@ -1,0 +1,163 @@
+<div class="col-md-6 offset-md-3">
+
+    <h3 class="text-center">Registro de Medicos</h3>
+
+    <form (ngSubmit)="onSubmit()" #medicoForm="ngForm">
+
+        <div class="form-group">
+            <label>Nombre(s): </label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="medico.name" name="name" required
+                minlength="4" maxlength="10" placeholder="Digite su nombre " #name="ngModel">
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors['required']">
+                    Digite su nombre por favor
+                </div>
+                <div *ngIf="name.errors['minimo']">
+                    El nombre tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf="name.errors['maximo']">
+                    El nombre tiene que tener como maximo 10 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Apellidos: </label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="medico.lastName" name="lastName" required
+                minlength="4" maxlength="20" placeholder="Digite su apellido " #lastName="ngModel">
+            <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                <div *ngIf="lastName.errors['required']">
+                    Digite su apellido por favor
+                </div>
+                <div *ngIf="lastName.errors['minimo']">
+                    El apellido tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf="lastName.errors['maximo']">
+                    El apellido tiene que tener como maximo 20 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Edad: </label>
+            <input type="text" class="form-control" id="age" [(ngModel)]="medico.age" name="age" required
+                placeholder="Digite su edad" #age="ngModel">
+            <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
+                <div *ngIf="age.errors['required']">
+                    Digite su edad por favor
+                </div>
+                <div *ngIf="age.errors['minimo']">
+                    La edad debe ser menor a 1
+                </div>
+                <div *ngIf="age.errors['maximo']">
+                    La edad debe ser mayor a mayor a 1
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Especialidad: </label>
+            <input type="text" class="form-control" id="especialization" [(ngModel)]="medico.especialization"
+                name="especialization" required placeholder="Digite su especialidad " #especialization="ngModel">
+            <div class="alert alert-danger"
+                *ngIf="especialization.invalid && (especialization.dirty || especialization.touched)">
+                <div *ngIf="especialization.errors['required']">
+                    Digite su especialidad por favor
+                </div>
+                <div *ngIf="especialization.errors['minimo']">
+                    La especialidad tiene que contener como minimo 4 numero
+                </div>
+                <div *ngIf="especialization.errors['maximo']">
+                    La especialidad tiene que tener como maximo 10 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Telefono: </label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="medico.phone" name="phone" required
+                placeholder="Digite su telefono " #phone="ngModel">
+            <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors['required']">
+                    Digite su telefono por favor
+                </div>
+                <div *ngIf="phone.errors['minimo']">
+                    El telefono tiene que contener como minimo 4 numero
+                </div>
+                <div *ngIf="phone.errors['maximo']">
+                    El telefono tiene que tener como maximo 10 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Correo Electronico: </label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="medico.email" name="email"
+                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required
+                placeholder="Digite su email " #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors['required']">
+                    Digite su email por favor
+                </div>
+                <div *ngIf="email.errors['pattern']">
+                    Por favor digite el email con el siguiente formato : user100@gmail.com
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Direccion: </label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="medico.address" name="address" required
+                minlength="4" maxlength="20" placeholder="Digite su apellido " #address="ngModel">
+            <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+                <div *ngIf="address.errors['required']">
+                    Digite su direccion por favor
+                </div>
+                <div *ngIf="address.errors['minimo']">
+                    El direccion tiene que contener como minimo 4 numero
+                </div>
+                <div *ngIf="address.errors['maximo']">
+                    El direccion tiene que tener como maximo 20 caracteres
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hora de Entrada: </label>
+            <input type="text" class="form-control" id="startTime" [(ngModel)]="medico.startTime" name="startTime"
+                required minlength="4" maxlength="20" placeholder="Digite su hora de entrada " #startTime="ngModel">
+            <div class="alert alert-danger" *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)">
+                <div *ngIf="startTime.errors['required']">
+                    Digite su hora de entrada por favor
+                </div>
+                <div *ngIf="startTime.errors['minimo']">
+                    El horario minimo es apartir de las 00:01
+                </div>
+                <div *ngIf="startTime.errors['maximo']">
+                    El horario maximo es apartir de las 23:59
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label> Hora de Salida:</label>
+            <input type="text" class="form-control" id="endTime" [(ngModel)]="medico.endTime" name="endTime" required
+                minlength="4" maxlength="20" placeholder="Digite su hora de salida" #endTime="ngModel">
+            <div class="alert alert-danger" *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)">
+                <div *ngIf="endTime.errors['required']">
+                    Digite su hora de salida por favor
+                </div>
+                <div *ngIf="endTime.errors['minimo']">
+                    El horario minimo es apartir de las 00:01
+                </div>
+                <div *ngIf="endTime.errors['maximo']">
+                    El horario maximo es apartir de las 23:59
+                </div>
+            </div>
+        </div>
+
+
+        <button class="btn btn-success" [disabled]="!medicoForm.valid">Guardar</button>
+    </form>
+</div>
