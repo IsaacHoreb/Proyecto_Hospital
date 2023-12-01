@@ -14,21 +14,6 @@ export class RegistarMedicosComponent implements OnInit {
 
   medico: Medicos = new Medicos();
 
-  //Agrego para selecionar las especialidades
-  especialization: string[] = ['CARDIOLOGIA', 'DERMATOLOGIA', 'ENDOCRINOLOGIA', 'GASTROENTEROLOGIA', 'GINECOLOGIA', 'NEUROLOGIA', 'OFTALMOLOGIA', 'ORTOPEDIA', 'PEDIATRIA', 'UROLOGIA'];
-
-  //Agrego para selecionar de direciones
-  address: string[] = [
-    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
-    "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Estado de México",
-    "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos",
-    "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo",
-    "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala",
-    "Veracruz", "Yucatán", "Zacatecas", "extrangero"
-  ];
-
-
-
   constructor(private medicoServicio: MedicoService, private router: Router) { }
 
   guardarMedicos() {
@@ -51,5 +36,22 @@ export class RegistarMedicosComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  //Esta parte es donde guardamos los datos pre-cargados para el menu desplegable
+  //Agrego para selecionar las especialidades
+  especialization: string[] = ['CARDIOLOGIA', 'DERMATOLOGIA', 'ENDOCRINOLOGIA', 'GASTROENTEROLOGIA', 'GINECOLOGIA', 'NEUROLOGIA', 'OFTALMOLOGIA', 'ORTOPEDIA', 'PEDIATRIA', 'UROLOGIA'];
+
+  //Agrego para selecionar de direciones
+  address: string[] = [
+    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
+    "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Estado de México",
+    "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos",
+    "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo",
+    "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala",
+    "Veracruz", "Yucatán", "Zacatecas", "extrangero"
+  ];
+
+
+
 
 }

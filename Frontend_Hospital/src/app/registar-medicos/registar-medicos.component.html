@@ -68,18 +68,15 @@
         </div>
 
         <div class="form-group">
-            <label>Telefono: </label>
+            <label>Teléfono: </label>
             <input type="text" class="form-control" id="phone" [(ngModel)]="medico.phone" name="phone" required
-                placeholder="Digite su telefono " #phone="ngModel">
+                pattern="[0-9]{10}" maxlength="10" placeholder="Digite su teléfono " #phone="ngModel">
             <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
                 <div *ngIf="phone.errors['required']">
-                    Digite su telefono por favor
+                    Digite su teléfono por favor
                 </div>
-                <div *ngIf="phone.errors['minimo']">
-                    El telefono tiene que contener como minimo 4 numero
-                </div>
-                <div *ngIf="phone.errors['maximo']">
-                    El telefono tiene que tener como maximo 10 caracteres
+                <div *ngIf="phone.errors['pattern']">
+                    El teléfono debe contener exactamente 10 dígitos
                 </div>
             </div>
         </div>
@@ -103,7 +100,7 @@
             <label>Dirección: </label>
             <select class="form-control" id="address" [(ngModel)]="medico.address" name="address" required>
                 <option value="" disabled selected>Seleccione una dirección</option>
-                <option *ngFor="let direccion of address" [value]= "direccion">{{ direccion }}</option>
+                <option *ngFor="let direccion of address" [value]="direccion">{{ direccion }}</option>
             </select>
             <div class="alert alert-danger" *ngIf="!medico.address || medico.address.length === 0">
                 Seleccione una dirección por favor
