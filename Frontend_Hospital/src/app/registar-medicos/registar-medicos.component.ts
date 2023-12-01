@@ -17,6 +17,18 @@ export class RegistarMedicosComponent implements OnInit {
   //Agrego para selecionar las especialidades
   especialization: string[] = ['CARDIOLOGIA', 'DERMATOLOGIA', 'ENDOCRINOLOGIA', 'GASTROENTEROLOGIA', 'GINECOLOGIA', 'NEUROLOGIA', 'OFTALMOLOGIA', 'ORTOPEDIA', 'PEDIATRIA', 'UROLOGIA'];
 
+  //Agrego para selecionar de direciones
+  address: string[] = [
+    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche",
+    "Chiapas", "Chihuahua", "Coahuila", "Colima", "Durango", "Estado de México",
+    "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos",
+    "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo",
+    "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala",
+    "Veracruz", "Yucatán", "Zacatecas", "extrangero"
+  ];
+
+
+
   constructor(private medicoServicio: MedicoService, private router: Router) { }
 
   guardarMedicos() {

@@ -100,19 +100,13 @@
         </div>
 
         <div class="form-group">
-            <label>Direccion: </label>
-            <input type="text" class="form-control" id="address" [(ngModel)]="medico.address" name="address" required
-                minlength="4" maxlength="20" placeholder="Digite su apellido " #address="ngModel">
-            <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
-                <div *ngIf="address.errors['required']">
-                    Digite su direccion por favor
-                </div>
-                <div *ngIf="address.errors['minimo']">
-                    El direccion tiene que contener como minimo 4 numero
-                </div>
-                <div *ngIf="address.errors['maximo']">
-                    El direccion tiene que tener como maximo 20 caracteres
-                </div>
+            <label>Dirección: </label>
+            <select class="form-control" id="address" [(ngModel)]="medico.address" name="address" required>
+                <option value="" disabled selected>Seleccione una dirección</option>
+                <option *ngFor="let direccion of address" [value]= "direccion">{{ direccion }}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="!medico.address || medico.address.length === 0">
+                Seleccione una dirección por favor
             </div>
         </div>
 
