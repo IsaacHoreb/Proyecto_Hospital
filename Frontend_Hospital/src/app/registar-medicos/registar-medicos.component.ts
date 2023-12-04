@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Medicos } from '../medicos';
 import { MedicoService } from '../medico.service';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registar-medicos',
@@ -48,9 +49,12 @@ export class RegistarMedicosComponent implements OnInit {
     "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos",
     "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo",
     "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala",
-    "Veracruz", "Yucatán", "Zacatecas", "extrangero"
+    "Veracruz", "Yucatán", "Zacatecas", "extranjero"
   ];
 
+  //Tiempo
+  startTime = new FormControl(this.medico.startTime, [Validators.required]);
+  endTime = new FormControl(this.medico.startTime, [Validators.required]);
 
 
 

@@ -7,7 +7,7 @@
         <div class="form-group">
             <label>Nombre(s): </label>
             <input type="text" class="form-control" id="name" [(ngModel)]="medico.name" name="name" required
-                minlength="4" maxlength="10" placeholder="Digite su nombre " #name="ngModel">
+                minlength="4" maxlength="20" placeholder="Digite su nombre " #name="ngModel">
             <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div *ngIf="name.errors['required']">
                     Digite su nombre por favor
@@ -107,37 +107,36 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label>Hora de Entrada: </label>
-            <input type="text" class="form-control" id="startTime" [(ngModel)]="medico.startTime" name="startTime"
-                required minlength="4" maxlength="20" placeholder="Digite su hora de entrada " #startTime="ngModel">
-            <div class="alert alert-danger" *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)">
-                <div *ngIf="startTime.errors['required']">
-                    Digite su hora de entrada por favor
-                </div>
-                <div *ngIf="startTime.errors['minimo']">
-                    El horario minimo es apartir de las 00:01
-                </div>
-                <div *ngIf="startTime.errors['maximo']">
-                    El horario maximo es apartir de las 23:59
+        <div>
+            <div class="form-group">
+                <label>Hora de Entrada: </label>
+                <input [ngxTimepicker]="picker" type="text" class="form-control" id="startTime"
+                    [(ngModel)]="medico.startTime" name="startTime" required placeholder="Seleccione su hora de entrada"
+                    [format]="24">
+                <form>
+                    <ngx-material-timepicker #picker [(ngModel)]="medico.startTime"></ngx-material-timepicker>
+                </form>
+                <div class="alert alert-danger" *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)">
+                    <div *ngIf="startTime.errors['required']">
+                        Seleccione su hora de entrada por favor
+                    </div>
                 </div>
             </div>
         </div>
 
-
-        <div class="form-group">
-            <label> Hora de Salida:</label>
-            <input type="text" class="form-control" id="endTime" [(ngModel)]="medico.endTime" name="endTime" required
-                minlength="4" maxlength="20" placeholder="Digite su hora de salida" #endTime="ngModel">
-            <div class="alert alert-danger" *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)">
-                <div *ngIf="endTime.errors['required']">
-                    Digite su hora de salida por favor
-                </div>
-                <div *ngIf="endTime.errors['minimo']">
-                    El horario minimo es apartir de las 00:01
-                </div>
-                <div *ngIf="endTime.errors['maximo']">
-                    El horario maximo es apartir de las 23:59
+        <div>
+            <div class="form-group">
+                <label>Hora de Salida: </label>
+                <input [ngxTimepicker]= "pickerTwo" type="text" class="form-control" id="endTime"
+                    [(ngModel)]="medico.endTime" name="endTime" required placeholder="Seleccione su hora de salida"
+                    [format]="24">
+                <form>
+                    <ngx-material-timepicker #pickerTwo [(ngModel)]="medico.endTime"></ngx-material-timepicker>
+                </form>
+                <div class="alert alert-danger" *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)">
+                    <div *ngIf="endTime.errors['required']">
+                        Seleccione su hora de entrada por favor
+                    </div>
                 </div>
             </div>
         </div>

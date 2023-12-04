@@ -1,4 +1,7 @@
 //Tipos de datos general de medicos
+
+import { Data } from "@angular/router";
+
 //configurar el tsconfin.json
 export class Medicos {
 
@@ -10,8 +13,8 @@ export class Medicos {
     phone: string;
     email: string;
     address: string[];
-    startTime: string;
-    endTime: string;
+    startTime: Data;
+    endTime: Data;
 
     // Asegurar que el array de especialización tiene solo un elemento
     setEspecialization(especialization: string) {

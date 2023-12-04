@@ -9,6 +9,8 @@ import { ListarMedicosComponent } from './listar-medicos/listar-medicos.componen
 import { HttpClientModule } from '@angular/common/http';
 import { RegistarMedicosComponent } from './registar-medicos/registar-medicos.component';
 import { FormsModule } from '@angular/forms';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Para el reloj
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //Para el reloj
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, //Agregamos 
-    FormsModule //Agrega
+    FormsModule, //Agrega
+    NgxMaterialTimepickerModule, //Agregado para el tiempo
+    BrowserAnimationsModule //Agregado para el tiempo
   ],
   providers: [],
   bootstrap: [AppComponent]
