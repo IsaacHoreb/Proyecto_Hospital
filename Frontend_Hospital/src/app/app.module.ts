@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistarMedicosComponent } from './registar-medicos/registar-medicos.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Para el reloj
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //Para el reloj
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActualizarMedicoComponent } from './actualizar-medico/actualizar-medico.component'; //Para el reloj
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarMedicosComponent,
-    RegistarMedicosComponent
+    RegistarMedicosComponent,
+    ActualizarMedicoComponent
   ],
   imports: [
     BrowserModule,
