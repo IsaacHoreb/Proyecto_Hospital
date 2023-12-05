@@ -12,3 +12,22 @@
     background-color: #343a40; /* Color de fondo de la fila de encabezado */
     color: white; /* Color del texto del encabezado */
 }
+
+h2.text-center {
+    margin-bottom: 20px; /* Ajusta el espacio inferior según tus preferencias */
+}
+
+:host {
+    display: flex;
+    flex-direction: column; /* Asegúrate de que los elementos se apilen verticalmente */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 20px; /* Ajusta el espacio superior según tus preferencias */
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column; /* Cambia a column para que los elementos se apilen verticalmente */
+    align-items: center;
+}

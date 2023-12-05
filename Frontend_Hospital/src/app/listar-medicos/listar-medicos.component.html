@@ -1,47 +1,51 @@
-<h2>Lista de Medicos</h2>
+<h2 class="text-center">Lista de Medicos</h2>
 
-<table class="table table-striped">
-    <thead class="table-dark">
-        <tr>
-            <th>Nombre(s)</th>
-            <th>Apellidos</th>
-            <th>Edad</th>
-            <th>Especialidad</th>
-            <th>Telefono</th>
-            <th>Correo</th>
-            <th>Direccion</th>
-            <th>Entrada</th>
-            <th>Salida</th>
-            <th>Editar</th>
-            <th>Detalles</th>
-            <th>Elimnar</th>
-        </tr>
-    </thead>
+<div class="table-container">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre(s)</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Especialidad</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Direccion</th>
+                <th>Entrada</th>
+                <th>Salida</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Elimnar</th>
+            </tr>
+        </thead>
 
-    <tbody>
-        <tr *ngFor="let medico of medicos">
-            <td>{{medico.name}}</td>
-            <td>{{medico.lastName}}</td>
-            <td>{{medico.age}}</td>
-            <td>{{medico.especialization}}</td>
-            <td>{{medico.phone}}</td>
-            <td>{{medico.email}}</td>
-            <td>{{medico.address}}</td>
-            <td>{{medico.startTime}}</td>
-            <td>{{medico.endTime}}</td>
+        <tbody>
+            <tr *ngFor="let medico of medicos">
+                <td>{{medico.name}}</td>
+                <td>{{medico.lastName}}</td>
+                <td>{{medico.age}}</td>
+                <td>{{medico.especialization}}</td>
+                <td>{{medico.phone}}</td>
+                <td>{{medico.email}}</td>
+                <td>{{medico.address}}</td>
+                <td>{{medico.startTime}}</td>
+                <td>{{medico.endTime}}</td>
 
-            <!--Button para las necesidades-->
-            <td>
-                <button (click)="actualizarMedicos(medico.id)" class="btn btn-info">Actualizar</button>
-            </td>
-            <td>
-                <button (click)="verDetallesDelMedico(medico.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
-            </td>
-            <td>
-                <button (click)="eliminarMedico(medico.id)" class="btn btn-danger" style= "margin-left: 10px;">Eliminar</button>
-            </td>
+                <!--Button para las necesidades-->
+                <td>
+                    <button (click)="actualizarMedicos(medico.id)" class="btn btn-info">Actualizar</button>
+                </td>
+                <td>
+                    <button (click)="verDetallesDelMedico(medico.id)" class="btn btn-primary"
+                        style="margin-left: 10px;">Detalles</button>
+                </td>
+                <td>
+                    <button (click)="eliminarMedico(medico.id)" class="btn btn-danger"
+                        style="margin-left: 10px;">Eliminar</button>
+                </td>
 
-        </tr>
-    </tbody>
+            </tr>
+        </tbody>
 
-</table>
+    </table>
+</div>
