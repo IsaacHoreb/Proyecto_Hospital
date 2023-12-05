@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Medicos } from '../medicos';
 import { MedicoService } from '../medico.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listar-medicos',
@@ -23,6 +24,10 @@ export class ListarMedicosComponent implements OnInit {
     })
   }
 
+  ngOnInit(): void {
+    this.obtenerMedicos();
+  }
+
   //Creamos metodo para actualizar medicos
   actualizarMedicos(id: number) {
     this.router.navigate(['actualizarMedicos', id]);
@@ -33,8 +38,40 @@ export class ListarMedicosComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.obtenerMedicos();
+  /*
+  eliminarMedico(id: number) {
+    this.medicoServicio.eliminarMedicoPorId(id).subscribe(datos => {
+      this.obtenerMedicos();
+      console.log(datos);
+    });
+  }*/
+
+  eliminarMedico(id: number) {
+    swal({
+      title: '¿Estas seguro?',
+      text: "Confirma si deseas eliminar al empleado",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si , elimínalo',
+      cancelButtonText: 'No, cancelar',
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: true
+    }).then((result) => {
+      if (result.value) {
+        this.medicoServicio.eliminarMedicoPorId(id).subscribe(dato => {
+          console.log(dato);
+          this.obtenerMedicos();
+          swal(
+            'Medico eliminado',
+            'El medico ha sido eliminado con exito',
+            'success'
+          )
+        })
+      }
+    })
   }
 
 }

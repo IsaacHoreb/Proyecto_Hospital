@@ -14,6 +14,7 @@
             <th>Salida</th>
             <th>Editar</th>
             <th>Detalles</th>
+            <th>Elimnar</th>
         </tr>
     </thead>
 
@@ -35,6 +36,9 @@
             </td>
             <td>
                 <button (click)="verDetallesDelMedico(medico.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+            </td>
+            <td>
+                <button (click)="eliminarMedico(medico.id)" class="btn btn-danger" style= "margin-left: 10px;">Eliminar</button>
             </td>
 
         </tr>

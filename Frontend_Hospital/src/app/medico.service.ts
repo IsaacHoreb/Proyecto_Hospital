@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { Medicos } from './medicos';
 
 @Injectable({
@@ -36,8 +36,12 @@ export class MedicoService {
   }
 
   //Creamos metodo de elimnar por id
-  eliminarMedicoPorId(id: number): Observable<Object> {
-    return this.httpClient.delete<Medicos>(`${this.baseURL}/delete/${id}`);
+  eliminarMedicoPorId(id: number): Observable<any> {
+    return this.httpClient.delete(`${this.baseURL}/delete/${id}`, { responseType: 'text' }).pipe(
+      catchError((error: any) => {
+        console.error('Error al eliminar el médico:', error);
+        throw error; // Puedes manejar el error de otra manera según tus necesidades
+      }));
   }
 
 }
