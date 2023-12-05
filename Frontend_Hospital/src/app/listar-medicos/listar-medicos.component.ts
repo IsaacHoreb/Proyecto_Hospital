@@ -25,8 +25,13 @@ export class ListarMedicosComponent implements OnInit {
 
   //Creamos metodo para actualizar medicos
   actualizarMedicos(id: number) {
-    this.router.navigate(['actualizarMedicos',id]);
+    this.router.navigate(['actualizarMedicos', id]);
   }
+
+  verDetallesDelMedico(id: number) {
+    this.router.navigate(['medicoDetalles', id]);
+  }
+
 
   ngOnInit(): void {
     this.obtenerMedicos();

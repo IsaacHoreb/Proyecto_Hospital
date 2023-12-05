@@ -13,6 +13,7 @@
             <th>Entrada</th>
             <th>Salida</th>
             <th>Editar</th>
+            <th>Detalles</th>
         </tr>
     </thead>
 
@@ -30,7 +31,10 @@
 
             <!--Button para las necesidades-->
             <td>
-                <button (click)= "actualizarMedicos(medico.id)" class="btn btn-info">Actualizar</button>
+                <button (click)="actualizarMedicos(medico.id)" class="btn btn-info">Actualizar</button>
+            </td>
+            <td>
+                <button (click)="verDetallesDelMedico(medico.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
             </td>
 
         </tr>

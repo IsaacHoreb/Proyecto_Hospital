@@ -13,12 +13,14 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker'; //Para el
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //Para el reloj
 import { ActualizarMedicoComponent } from './actualizar-medico/actualizar-medico.component'; 
 import { ReactiveFormsModule } from '@angular/forms';
+import { DetallesMedicosComponent } from './detalles-medicos/detalles-medicos.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListarMedicosComponent,
     RegistarMedicosComponent,
-    ActualizarMedicoComponent
+    ActualizarMedicoComponent,
+    DetallesMedicosComponent
   ],
   imports: [
     BrowserModule,
