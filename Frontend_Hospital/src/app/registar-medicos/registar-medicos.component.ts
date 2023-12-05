@@ -54,8 +54,6 @@ export class RegistarMedicosComponent implements OnInit {
 
   //Tiempo
   startTime = new FormControl(this.medico.startTime, [Validators.required]);
-  endTime = new FormControl(this.medico.startTime, [Validators.required]);
-
-
+  endTime = new FormControl(this.medico.endTime, [Validators.required]);
 
 }

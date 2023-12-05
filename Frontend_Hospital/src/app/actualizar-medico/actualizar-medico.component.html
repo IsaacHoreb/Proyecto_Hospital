@@ -1,1 +1,155 @@
-<p>actualizar-medico works!</p>
+<div class="col-md-8 offset-md-2">
+
+    <h3 class="text-center">Registro de Medicos</h3>
+
+    <form (ngSubmit)="onSubmit()" #medicoForm="ngForm">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nombre(s): </label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="medico.name" name="name" required
+                    minlength="4" maxlength="20" placeholder="Digite su nombre " #name="ngModel">
+                <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors['required']">
+                        Digite su nombre por favor
+                    </div>
+                    <div *ngIf="name.errors['minimo']">
+                        El nombre tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="name.errors['maximo']">
+                        El nombre tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Apellidos: </label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="medico.lastName" name="lastName"
+                    required minlength="4" maxlength="20" placeholder="Digite su apellido " #lastName="ngModel">
+                <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                    <div *ngIf="lastName.errors['required']">
+                        Digite su apellido por favor
+                    </div>
+                    <div *ngIf="lastName.errors['minimo']">
+                        El apellido tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="lastName.errors['maximo']">
+                        El apellido tiene que tener como maximo 20 caracteres
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Edad: </label>
+                <input type="number" class="form-control" id="age" [(ngModel)]="medico.age" name="age" required
+                    placeholder="Digite su edad" #age="ngModel" minimo="1" maximo="100">
+                <div class="alert alert-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
+                    <div *ngIf="age.errors['required']">
+                        Digite su edad por favor
+                    </div>
+                    <div *ngIf="age.errors['minimo']">
+                        La edad debe ser igual o mayor a 1
+                    </div>
+                    <div *ngIf="age.errors['maximo']">
+                        La edad debe ser igual o menor a 100
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Teléfono: </label>
+                <input type="text" class="form-control" id="phone" [(ngModel)]="medico.phone" name="phone" required
+                    pattern="[0-9]{10}" maxlength="10" placeholder="Digite su teléfono " #phone="ngModel">
+                <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                    <div *ngIf="phone.errors['required']">
+                        Digite su teléfono por favor
+                    </div>
+                    <div *ngIf="phone.errors['pattern']">
+                        El teléfono debe contener exactamente 10 dígitos
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Especialidad: </label>
+            <select class="form-control" id="especialization" [(ngModel)]="medico.especialization"
+                name="especialization" required>
+                <option value="" disabled selected>Seleccione una especialidad</option>
+                <option *ngFor="let especialidad of especialization" [value]="especialidad">{{ especialidad }}
+                </option>
+            </select>
+            <div class="alert alert-danger" *ngIf="!medico.especialization || medico.especialization.length === 0">
+                Seleccione una especialidad por favor
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Correo Electronico: </label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="medico.email" name="email"
+                    pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required
+                    placeholder="Digite su email " #email="ngModel">
+                <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors['required']">
+                        Digite su email por favor
+                    </div>
+                    <div *ngIf="email.errors['pattern']">
+                        Por favor digite el email con el siguiente formato : user100@gmail.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Dirección: </label>
+                <select class="form-control" id="address" [(ngModel)]="medico.address" name="address" required>
+                    <option value="" disabled selected>Seleccione una dirección</option>
+                    <option *ngFor="let direccion of address" [value]="direccion">{{ direccion }}</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="!medico.address || medico.address.length === 0">
+                    Seleccione una dirección por favor
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Hora de Entrada: </label>
+                <input [ngxTimepicker]="picker" type="text" class="form-control" id="startTime"
+                    [(ngModel)]="medico.startTime" name="startTime" required placeholder="Seleccione su hora de entrada"
+                    [format]="24">
+                <form>
+                    <ngx-material-timepicker #picker [(ngModel)]="medico.startTime"
+                        [ngModelOptions]="{standalone: true}"></ngx-material-timepicker>
+                </form>
+                <div class="alert alert-danger" *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)">
+                    <div *ngIf="startTime.errors['required']">
+                        Seleccione su hora de entrada por favor
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label>Hora de Salida: </label>
+                <input [ngxTimepicker]="pickerTwo" type="text" class="form-control" id="endTime"
+                    [(ngModel)]="medico.endTime" name="endTime" required placeholder="Seleccione su hora de salida"
+                    [format]="24">
+                <form>
+                    <ngx-material-timepicker #pickerTwo [(ngModel)]="medico.endTime"
+                        [ngModelOptions]="{standalone: true}"></ngx-material-timepicker>
+                </form>
+                <div class="alert alert-danger" *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)">
+                    <div *ngIf="endTime.errors['required']">
+                        Seleccione su hora de entrada por favor
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-success" [disabled]="!medicoForm.valid">Guardar Cambios</button>
+    </form>
+</div>

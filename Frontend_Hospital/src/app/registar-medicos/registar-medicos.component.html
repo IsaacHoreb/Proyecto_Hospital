@@ -121,7 +121,8 @@
                     [(ngModel)]="medico.startTime" name="startTime" required placeholder="Seleccione su hora de entrada"
                     [format]="24">
                 <form>
-                    <ngx-material-timepicker #picker [(ngModel)]="medico.startTime"></ngx-material-timepicker>
+                    <ngx-material-timepicker #picker [(ngModel)]="medico.startTime"
+                        [ngModelOptions]="{standalone: true}"></ngx-material-timepicker>
                 </form>
                 <div class="alert alert-danger" *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)">
                     <div *ngIf="startTime.errors['required']">
@@ -130,13 +131,15 @@
                 </div>
             </div>
 
+
             <div class="form-group col-md-6">
                 <label>Hora de Salida: </label>
                 <input [ngxTimepicker]="pickerTwo" type="text" class="form-control" id="endTime"
                     [(ngModel)]="medico.endTime" name="endTime" required placeholder="Seleccione su hora de salida"
                     [format]="24">
                 <form>
-                    <ngx-material-timepicker #pickerTwo [(ngModel)]="medico.endTime"></ngx-material-timepicker>
+                    <ngx-material-timepicker #pickerTwo [(ngModel)]="medico.endTime"
+                        [ngModelOptions]="{standalone: true}"></ngx-material-timepicker>
                 </form>
                 <div class="alert alert-danger" *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)">
                     <div *ngIf="endTime.errors['required']">

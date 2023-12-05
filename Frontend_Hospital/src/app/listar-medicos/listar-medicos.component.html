@@ -12,11 +12,12 @@
             <th>Direccion</th>
             <th>Entrada</th>
             <th>Salida</th>
+            <th>Editar</th>
         </tr>
     </thead>
 
     <tbody>
-        <tr *ngFor= "let medico of medicos">
+        <tr *ngFor="let medico of medicos">
             <td>{{medico.name}}</td>
             <td>{{medico.lastName}}</td>
             <td>{{medico.age}}</td>
@@ -26,6 +27,12 @@
             <td>{{medico.address}}</td>
             <td>{{medico.startTime}}</td>
             <td>{{medico.endTime}}</td>
+
+            <!--Button para las necesidades-->
+            <td>
+                <button (click)= "actualizarMedicos(medico.id)" class="btn btn-info">Actualizar</button>
+            </td>
+
         </tr>
     </tbody>
 

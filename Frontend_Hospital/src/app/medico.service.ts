@@ -10,21 +10,34 @@ import { Medicos } from './medicos';
 
 export class MedicoService {
 
-  //.-Ingresamos el endPoint de la listar medicos
-  private baseURL = "http://localhost:8080/doctor/listAll";
-  private baseURL2 = "http://localhost:8080/doctor/save";
+  //.-Ingresamos el endPoint del controlador de Medicos
+  private baseURL = "http://localhost:8080/doctor";
 
   constructor(private httpClient: HttpClient) { } //Ingresamos el httpClient
 
   //metodo para listar
   obtenerListaDeMedicos(): Observable<Medicos[]> {
-    return this.httpClient.get<Medicos[]>(`${this.baseURL}`);
+    return this.httpClient.get<Medicos[]>(`${this.baseURL}/listAll`);
   }
 
   //Creamos metodo de registrar medico
   registarMedicos(medico: Medicos): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL2}`, medico);
+    return this.httpClient.post(`${this.baseURL}/save`, medico);
   }
 
+  //Creamos metodo de actualizar medico
+  actualizarMedicos(id: number, medico: Medicos): Observable<Object> {
+    return this.httpClient.put(`${this.baseURL}/update/${id}`, medico);
+  }
+
+  //Creamos metodo de obtener por id
+  obtenerMedicoPorId(id: number): Observable<Medicos> {
+    return this.httpClient.get<Medicos>(`${this.baseURL}/get/${id}`);
+  }
+
+  //Creamos metodo de elimnar por id
+  eliminarMedicoPorId(id: number): Observable<Object> {
+    return this.httpClient.delete<Medicos>(`${this.baseURL}/delete/${id}`);
+  }
 
 }

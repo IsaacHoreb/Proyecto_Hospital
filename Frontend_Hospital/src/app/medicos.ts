@@ -13,8 +13,8 @@ export class Medicos {
     phone: string;
     email: string;
     address: string[];
-    startTime: Data;
-    endTime: Data;
+    startTime: string;
+    endTime: string;
 
     // Asegurar que el array de especialización tiene solo un elemento
     setEspecialization(especialization: string) {

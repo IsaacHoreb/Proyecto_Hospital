@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Medicos } from '../medicos';
 import { MedicoService } from '../medico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-medicos',
@@ -13,13 +14,18 @@ export class ListarMedicosComponent implements OnInit {
   medicos: Medicos[]; //Almacen de informacion para listar
 
   //Inyectamo el servicio creado
-  constructor(private medicoServicio: MedicoService) { }
+  constructor(private medicoServicio: MedicoService, private router: Router) { }
 
   //Creamos metodo para lista los medicos
   private obtenerMedicos() {
     this.medicoServicio.obtenerListaDeMedicos().subscribe(dato => {
       this.medicos = dato;
     })
+  }
+
+  //Creamos metodo para actualizar medicos
+  actualizarMedicos(id: number) {
+    this.router.navigate(['actualizarMedicos',id]);
   }
 
   ngOnInit(): void {
