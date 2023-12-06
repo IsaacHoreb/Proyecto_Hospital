@@ -14,13 +14,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ActualizarMedicoComponent } from './actualizar-medico/actualizar-medico.component'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetallesMedicosComponent } from './detalles-medicos/detalles-medicos.component';
+import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListarMedicosComponent,
     RegistarMedicosComponent,
     ActualizarMedicoComponent,
-    DetallesMedicosComponent
+    DetallesMedicosComponent,
+    ListarPacientesComponent
   ],
   imports: [
     BrowserModule,

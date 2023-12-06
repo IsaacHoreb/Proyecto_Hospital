@@ -1,0 +1,36 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.column-header, .table tbody tr td {
+    border: 1px solid #ddd; /* Color y grosor de las líneas */
+    padding: 10px;
+}
+
+.table thead tr {
+    background-color: #343a40; /* Color de fondo de la fila de encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+h2.text-center {
+    margin-bottom: 20px; /* Ajusta el espacio inferior según tus preferencias */
+}
+
+/*
+:host {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 20px; 
+}
+*/
+
+/*
+.table-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}*/

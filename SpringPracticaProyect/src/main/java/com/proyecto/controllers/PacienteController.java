@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:4200") //Permite el intercambio de recursos entre API
 @RestController
 @RequestMapping(path = "/paciente")
 public class PacienteController {
@@ -33,5 +36,17 @@ public class PacienteController {
     public ResponseEntity<String> eliminarPacienteId(@PathVariable("id") Long id) throws Exception {
         return pacienteServices.eliminarPacienteId(id);
     }
+
+    @GetMapping("/listAll")
+    public ResponseEntity<List<PacienteEntity>> listarPacientes() throws Exception {
+        List<PacienteEntity> listPaciente = pacienteServices.listarPacientes();
+
+        if (listPaciente.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(listPaciente);
+    }
+
 
 }

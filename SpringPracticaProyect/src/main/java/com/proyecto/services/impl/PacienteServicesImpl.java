@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PacienteServicesImpl implements PacienteServices {
 
@@ -88,5 +90,10 @@ public class PacienteServicesImpl implements PacienteServices {
         }
 
         return ResponseEntity.ok("El paciente con id: " + id + "\nha sido eliminado con éxito...");
+    }
+
+    @Override
+    public List<PacienteEntity> listarPacientes() throws Exception {
+        return pacienteRepository.findAll();
     }
 }
