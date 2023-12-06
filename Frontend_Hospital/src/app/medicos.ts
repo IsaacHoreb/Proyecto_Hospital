@@ -1,7 +1,5 @@
 //Tipos de datos general de medicos
 
-import { Data } from "@angular/router";
-
 //configurar el tsconfin.json
 export class Medicos {
 
