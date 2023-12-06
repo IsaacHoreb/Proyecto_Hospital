@@ -21,7 +21,7 @@ export class RegistarMedicosComponent implements OnInit {
     this.medicoServicio.registarMedicos(this.medico).subscribe(datos => {
       console.log(datos);
       this.irListaMedicos();
-    }, error => console.log(error));
+    }), error => console.log(error);
   }
 
   irListaMedicos() {

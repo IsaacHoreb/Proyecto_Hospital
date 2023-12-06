@@ -5,6 +5,7 @@ import { RegistarMedicosComponent } from './registar-medicos/registar-medicos.co
 import { ActualizarMedicoComponent } from './actualizar-medico/actualizar-medico.component';
 import { DetallesMedicosComponent } from './detalles-medicos/detalles-medicos.component';
 import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
+import { RegistarPacientesComponent } from './registar-pacientes/registar-pacientes.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'medicoDetalles/:id', component: DetallesMedicosComponent },
   //Rutas de pacientes
   { path: 'pacientes', component: ListarPacientesComponent },
+  { path: 'registarPacientes', component: RegistarPacientesComponent }
 ];
 
 @NgModule({

@@ -15,6 +15,7 @@ import { ActualizarMedicoComponent } from './actualizar-medico/actualizar-medico
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetallesMedicosComponent } from './detalles-medicos/detalles-medicos.component';
 import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
+import { RegistarPacientesComponent } from './registar-pacientes/registar-pacientes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.co
     RegistarMedicosComponent,
     ActualizarMedicoComponent,
     DetallesMedicosComponent,
-    ListarPacientesComponent
+    ListarPacientesComponent,
+    RegistarPacientesComponent
   ],
   imports: [
     BrowserModule,
