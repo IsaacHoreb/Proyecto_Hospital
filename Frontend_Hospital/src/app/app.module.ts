@@ -17,6 +17,7 @@ import { DetallesMedicosComponent } from './detalles-medicos/detalles-medicos.co
 import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.component';
 import { RegistarPacientesComponent } from './registar-pacientes/registar-pacientes.component';
 import { ActualizarPacientesComponent } from './actualizar-pacientes/actualizar-pacientes.component';
+import { DetallesPacientesComponent } from './detalles-pacientes/detalles-pacientes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ActualizarPacientesComponent } from './actualizar-pacientes/actualizar-
     DetallesMedicosComponent,
     ListarPacientesComponent,
     RegistarPacientesComponent,
-    ActualizarPacientesComponent
+    ActualizarPacientesComponent,
+    DetallesPacientesComponent
   ],
   imports: [
     BrowserModule,
