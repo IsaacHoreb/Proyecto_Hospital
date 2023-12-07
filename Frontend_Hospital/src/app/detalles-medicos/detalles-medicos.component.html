@@ -1,43 +1,51 @@
-<h3>Detalles de Medicos</h3>
+<div class="detalles-medico">
+    <h3>Detalles del Medico</h3>
 
-<div>
-    <div>
-        <label><b>Identificador:</b> {{medico.id}} </label>
-    </div>
+    <table>
+        <tr>
+            <th>Identificador</th>
+            <td>{{medico.id}}</td>
+        </tr>
 
-    <div>
-        <label><b>Nombre(s):</b> {{medico.name}} </label>
-    </div>
+        <tr>
+            <th>Apellido(s)</th>
+            <td>{{medico.lastName}}</td>
+        </tr>
 
-    <div>
-        <label><b>Apellido(s):</b> {{medico.lastName}} </label>
-    </div>
+        <tr>
+            <th>Edad</th>
+            <td>{{medico.age}}</td>
+        </tr>
 
-    <div>
-        <label><b>Edad:</b> {{medico.age}} </label>
-    </div>
+        <tr>
+            <th>Especilidad</th>
+            <td>{{medico.especialization}}</td>
+        </tr>
 
-    <div>
-        <label><b>Especialidad</b> {{medico.especialization}} </label>
-    </div>
+        <tr>
+            <th>Telefono</th>
+            <td>{{medico.phone}}</td>
+        </tr>
 
-    <div>
-        <label><b>Telefono:</b> {{medico.phone}} </label>
-    </div>
+        <tr>
+            <th>Correo</th>
+            <td>{{medico.email}}</td>
+        </tr>
 
-    <div>
-        <label><b>Correo:</b> {{medico.email}} </label>
-    </div>
+        <tr>
+            <th>Direccion</th>
+            <td>{{medico.address}}</td>
+        </tr>
 
-    <div>
-        <label><b>Direccion:</b> {{medico.address}} </label>
-    </div>
+        <tr>
+            <th>Hora de Entrada</th>
+            <td>{{medico.startTime}}</td>
+        </tr>
 
-    <div>
-        <label><b>Hra Entrada:</b> {{medico.startTime}} </label>
-    </div>
+        <tr>
+            <th>Hora de Salida</th>
+            <td>{{medico.endTime}}</td>
+        </tr>
 
-    <div>
-        <label><b>Hra Salida:</b> {{medico.endTime}} </label>
-    </div>
+    </table>
 </div>
