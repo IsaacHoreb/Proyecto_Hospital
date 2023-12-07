@@ -26,4 +26,8 @@ export class ListarPacientesComponent implements OnInit {
     });
   }
 
+  actualizarPaciente(id: number) {
+    this.router.navigate(['actualizarPacientes', id]);
+  }
+
 }

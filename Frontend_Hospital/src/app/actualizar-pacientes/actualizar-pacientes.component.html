@@ -1,1 +1,129 @@
-<p>actualizar-pacientes works!</p>
+<div class="col-md-8 offset-md-2">
+
+    <h3 class="text-center">Actualizar Paciente {{pacientes.name}} </h3>
+
+    <form (ngSubmit)="onSubmit()" #pacienteForm="ngForm">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nombre(s): </label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="pacientes.name" name="name" required
+                    minlength="4" maxlength="20" placeholder="Digite su nombre " #name="ngModel">
+                <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div *ngIf="name.errors['required']">
+                        Digite su nombre por favor
+                    </div>
+                    <div *ngIf="name.errors['minimo']">
+                        El nombre tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="name.errors['maximo']">
+                        El nombre tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Apellidos: </label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="pacientes.lastName" name="lastName"
+                    required minlength="4" maxlength="20" placeholder="Digite su apellido " #lastName="ngModel">
+                <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                    <div *ngIf="lastName.errors['required']">
+                        Digite su apellido por favor
+                    </div>
+                    <div *ngIf="lastName.errors['minimo']">
+                        El apellido tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="lastName.errors['maximo']">
+                        El apellido tiene que tener como maximo 20 caracteres
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Fechas(s): </label>
+                <input type="text" class="form-control" id="dateBirth" [(ngModel)]="pacientes.dateBirth"
+                    name="dateBirth" required minlength="4" maxlength="20" placeholder="Digite su Fecha de nacimiento"
+                    #dateBirth="ngModel">
+                <div class="alert alert-danger" *ngIf="dateBirth.invalid && (dateBirth.dirty || dateBirth.touched)">
+                    <div *ngIf="dateBirth.errors['required']">
+                        Digite su fecha de nacimiento por favor
+                    </div>
+                    <div *ngIf="dateBirth.errors['minimo']">
+                        En su fecha de nacimiento tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="dateBirth.errors['maximo']">
+                        En su fecha de nacimiento tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Genero: </label>
+                <select class="form-control" id="genero" [(ngModel)]="pacientes.genero" name="genero" required>
+                    <option value="" disabled selected>Seleccione una especialidad</option>
+                    <option *ngFor="let genero of generos" [value]="genero">{{ genero }}
+                    </option>
+                </select>
+                <div class="alert alert-danger" *ngIf="!pacientes.genero || pacientes.genero.length === 0">
+                    Seleccione una especialidad por favor
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Dirección: </label>
+                <select class="form-control" id="address" [(ngModel)]="pacientes.address" name="address" required>
+                    <option value="" disabled selected>Seleccione una dirección</option>
+                    <option *ngFor="let direccion of address" [value]="direccion">{{ direccion }}</option>
+                </select>
+                <div class="alert alert-danger" *ngIf="!pacientes.address || pacientes.address.length === 0">
+                    Seleccione una dirección por favor
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Teléfono: </label>
+                <input type="text" class="form-control" id="phone" [(ngModel)]="pacientes.phone" name="phone" required
+                    pattern="[0-9]{10}" maxlength="10" placeholder="Digite su teléfono " #phone="ngModel">
+                <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                    <div *ngIf="phone.errors['required']">
+                        Digite su teléfono por favor
+                    </div>
+                    <div *ngIf="phone.errors['pattern']">
+                        El teléfono debe contener exactamente 10 dígitos
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>Historial Medico: </label>
+                <textarea class="form-control" id="medicalHistory" [(ngModel)]="pacientes.medicalHistory"
+                    name="medicalHistory" required minlength="50" maxlength="200" placeholder="Ingrese sus comentarios"
+                    #medicalHistory="ngModel"></textarea>
+                <div class="alert alert-danger"
+                    *ngIf="medicalHistory.invalid && (medicalHistory.dirty || medicalHistory.touched)">
+                    <div *ngIf="medicalHistory.errors['required']">
+                        Por favor, ingrese sus comentarios
+                    </div>
+                    <div *ngIf="medicalHistory.errors['minlength']">
+                        Los comentarios deben contener al menos 50 caracteres
+                    </div>
+                    <div *ngIf="medicalHistory.errors['maxlength']">
+                        Los comentarios no deben exceder los 200 caracteres
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!pacienteForm.valid">Guardar</button>
+
+    </form>
+
+</div>

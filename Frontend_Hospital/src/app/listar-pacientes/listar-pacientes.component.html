@@ -11,6 +11,9 @@
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Historial Medico</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Elimnar</th>
             </tr>
 
         </thead>
@@ -22,6 +25,12 @@
             <td>{{paciente.address}}</td>
             <td>{{paciente.phone}}</td>
             <td>{{paciente.medicalHistory}}</td>
+
+            <!--Button para las necesidades-->
+            <td>
+                <button (click)="actualizarPaciente(paciente.id)" class="btn btn-info">Actualizar</button>
+            </td>
+
         </tr>
         <tbody>
 
