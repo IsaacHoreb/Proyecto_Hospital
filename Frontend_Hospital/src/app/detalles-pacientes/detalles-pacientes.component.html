@@ -1,35 +1,38 @@
-<h3>Detalles del Paciente</h3>
+<div class="detalles-pacientes">
+    <h3>Detalles del Paciente</h3>
 
-<div>
-    <div>
-        <label><b>Identificador:</b> {{paciente.id}} </label>
-    </div>
-
-    <div>
-        <label><b>Nombre(s):</b> {{paciente.name}} </label>
-    </div>
-
-    <div>
-        <label><b>Apellido(s): </b> {{paciente.lastName}} </label>
-    </div>
-
-    <div>
-        <label><b>F.Nacimiento: </b> {{paciente.dateBirth}} </label>
-    </div>
-
-    <div>
-        <label><b>Genero: </b> {{paciente.genero}} </label>
-    </div>
-
-    <div>
-        <label><b>Direccion: </b> {{paciente.address}} </label>
-    </div>
-
-    <div>
-        <label><b>Telefono: </b> {{paciente.phone}} </label>
-    </div>
-
-    <div>
-        <label><b>Historial Medico: </b> {{paciente.medicalHistory}} </label>
-    </div>
+    <table>
+        <tr>
+            <th>Identificador</th>
+            <td>{{paciente.id}}</td>
+        </tr>
+        <tr>
+            <th>Nombre(s)</th>
+            <td>{{paciente.name}}</td>
+        </tr>
+        <tr>
+            <th>Apellido(s)</th>
+            <td>{{paciente.lastName}}</td>
+        </tr>
+        <tr>
+            <th>F.Nacimiento</th>
+            <td>{{paciente.dateBirth}}</td>
+        </tr>
+        <tr>
+            <th>Genero</th>
+            <td>{{paciente.genero}}</td>
+        </tr>
+        <tr>
+            <th>Direccion</th>
+            <td>{{paciente.address}}</td>
+        </tr>
+        <tr>
+            <th>Telefono</th>
+            <td>{{paciente.phone}}</td>
+        </tr>
+        <tr>
+            <th>Historial Medico</th>
+            <td>{{paciente.medicalHistory}}</td>
+        </tr>
+    </table>
 </div>
