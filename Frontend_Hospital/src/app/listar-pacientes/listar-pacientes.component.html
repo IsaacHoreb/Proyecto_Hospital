@@ -13,7 +13,7 @@
                 <th>Historial Medico</th>
                 <th>Editar</th>
                 <th>Detalles</th>
-                <th>Elimnar</th>
+                <th>Eliminar</th>
             </tr>
 
         </thead>
@@ -32,6 +32,9 @@
             </td>
             <td>
                 <button (click)="detallesPaciente(paciente.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+            </td>
+            <td>
+                <button (click)="eliminarPaciente(paciente.id)" class="btn btn-danger"style="margin-left: 10px;">Eliminar</button>
             </td>
         </tr>
         <tbody>
