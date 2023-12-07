@@ -30,4 +30,8 @@ export class ListarPacientesComponent implements OnInit {
     this.router.navigate(['actualizarPacientes', id]);
   }
 
+  detallesPaciente(id: number) {
+    this.router.navigate(['pacienteDetalles', id]);
+  }
+
 }
