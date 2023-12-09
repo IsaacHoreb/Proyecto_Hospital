@@ -8,19 +8,23 @@ import { ListarPacientesComponent } from './listar-pacientes/listar-pacientes.co
 import { RegistarPacientesComponent } from './registar-pacientes/registar-pacientes.component';
 import { ActualizarPacientesComponent } from './actualizar-pacientes/actualizar-pacientes.component';
 import { DetallesPacientesComponent } from './detalles-pacientes/detalles-pacientes.component';
+import { ListarHistorialComponent } from './listar-historial/listar-historial.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
+  //Rutas de Medicos
   { path: 'medicos', component: ListarMedicosComponent },
   { path: '', redirectTo: 'medicos', pathMatch: 'full' },
   { path: 'registrarMedicos', component: RegistarMedicosComponent },
   { path: 'actualizarMedicos/:id', component: ActualizarMedicoComponent },
   { path: 'medicoDetalles/:id', component: DetallesMedicosComponent },
-  //Rutas de pacientes
+  //Rutas de Pacientes
   { path: 'pacientes', component: ListarPacientesComponent },
   { path: 'registarPacientes', component: RegistarPacientesComponent },
   { path: 'actualizarPacientes/:id', component: ActualizarPacientesComponent },
-  { path: 'pacienteDetalles/:id', component: DetallesPacientesComponent }
+  { path: 'pacienteDetalles/:id', component: DetallesPacientesComponent },
+  //Rutas de Historial
+  { path: 'historail', component: ListarHistorialComponent }
 ];
 
 @NgModule({
