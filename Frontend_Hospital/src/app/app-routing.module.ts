@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'actualizarPacientes/:id', component: ActualizarPacientesComponent },
   { path: 'pacienteDetalles/:id', component: DetallesPacientesComponent },
   //Rutas de Historial
-  { path: 'historail', component: ListarHistorialComponent }
+  { path: 'historial', component: ListarHistorialComponent }
 ];
 
 @NgModule({
