@@ -30,5 +30,9 @@ export class ListarHistorialComponent implements OnInit {
     this.router.navigate(['actualizarHistorial', id]);
   }
 
+  verDetallesHistorial(id: number) {
+    this.router.navigate(['historialDetalles', id]);
+  }
+
 
 }
