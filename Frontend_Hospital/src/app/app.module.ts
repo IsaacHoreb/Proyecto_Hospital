@@ -20,6 +20,7 @@ import { ActualizarPacientesComponent } from './actualizar-pacientes/actualizar-
 import { DetallesPacientesComponent } from './detalles-pacientes/detalles-pacientes.component';
 import { ListarHistorialComponent } from './listar-historial/listar-historial.component';
 import { RegistarHistorialComponent } from './registar-historial/registar-historial.component';
+import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-historial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { RegistarHistorialComponent } from './registar-historial/registar-histor
     ActualizarPacientesComponent,
     DetallesPacientesComponent,
     ListarHistorialComponent,
-    RegistarHistorialComponent
+    RegistarHistorialComponent,
+    ActualizarHistorialComponent
   ],
   imports: [
     BrowserModule,
