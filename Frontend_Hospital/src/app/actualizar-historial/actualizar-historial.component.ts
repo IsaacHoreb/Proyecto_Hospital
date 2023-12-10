@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Historial } from '../historial';
 import { HistorialService } from '../historial.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class ActualizarHistorialComponent implements OnInit {
 
   irListaHistorial() {
     this.router.navigate(['/historial']);
+    swal('Historial Actualizado', `El historial ${this.historial.id} ha sido actualizado con éxito`, 'success')
   }
 
 

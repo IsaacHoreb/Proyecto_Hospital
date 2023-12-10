@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Historial } from '../historial';
 import { HistorialService } from '../historial.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalles-historial',
@@ -21,6 +22,7 @@ export class DetallesHistorialComponent implements OnInit {
     this.historial = new Historial();
     this.historialServices.obtenerHistorialPorId(this.id).subscribe(datos => {
       this.historial = datos;
+      swal(`Detalles del Historial Medico ${this.historial.id}`);
     }), error => console.log(error);
 
   }
