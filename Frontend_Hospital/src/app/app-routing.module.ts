@@ -10,6 +10,7 @@ import { ActualizarPacientesComponent } from './actualizar-pacientes/actualizar-
 import { DetallesPacientesComponent } from './detalles-pacientes/detalles-pacientes.component';
 import { ListarHistorialComponent } from './listar-historial/listar-historial.component';
 import { RegistarHistorialComponent } from './registar-historial/registar-historial.component';
+import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-historial.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'pacienteDetalles/:id', component: DetallesPacientesComponent },
   //Rutas de Historial
   { path: 'historial', component: ListarHistorialComponent },
-  { path: 'registarHistorial', component: RegistarHistorialComponent }
+  { path: 'registarHistorial', component: RegistarHistorialComponent },
+  { path: 'actualizarHistorial/:id', component: ActualizarHistorialComponent }
 ];
 
 @NgModule({
