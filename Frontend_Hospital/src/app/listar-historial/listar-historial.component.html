@@ -1,1 +1,28 @@
-<p>listar-historial works!</p>
+<h2 class="text-center">Lista de Historial</h2>
+
+<div class="table-container">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Fecha Creada</th>
+                <th>Diagnostico</th>
+                <th>Tratamiento</th>
+                <th>Nota Medica</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Elimnar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let historial of historial">
+                <td>{{historial.dateCreated}}</td>
+                <td>{{historial.diagnoses}}</td>
+                <td>{{historial.treatments}}</td>
+                <td>{{historial.medicalNotes}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div>
