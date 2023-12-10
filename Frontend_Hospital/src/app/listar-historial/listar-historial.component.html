@@ -10,7 +10,7 @@
                 <th>Nota Medica</th>
                 <th>Editar</th>
                 <th>Detalles</th>
-                <th>Elimnar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
 
@@ -20,6 +20,11 @@
                 <td>{{historial.diagnoses}}</td>
                 <td>{{historial.treatments}}</td>
                 <td>{{historial.medicalNotes}}</td>
+
+                <!--Button para las necesidades-->
+                <td>
+                    <button (click)="actualizarHistorial(historial.id)" class="btn btn-info">Actualizar</button>
+                </td>
 
             </tr>
         </tbody>

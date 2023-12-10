@@ -1,1 +1,89 @@
-<p>actualizar-historial works!</p>
+<div class="col-md-8 offset-md-2">
+
+    <h3 class="text-center">Registro de Historial Medico</h3>
+
+    <form (ngSubmit)="onSubmit()" #pacienteForm="ngForm">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Fecha de Creación: </label>
+                <input type="text" class="form-control" id="dateCreated" [(ngModel)]="historial.dateCreated"
+                    name="dateCreated" required minlength="4" maxlength="20" placeholder="Digite su fecha de creación"
+                    #dateCreated="ngModel">
+                <div class="alert alert-danger"
+                    *ngIf="dateCreated.invalid && (dateCreated.dirty || dateCreated.touched)">
+                    <div *ngIf="dateCreated.errors['required']">
+                        Digite la fecha de creación por favor
+                    </div>
+                    <div *ngIf="dateCreated.errors['minimo']">
+                        En su fecha de creación tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="dateCreated.errors['maximo']">
+                        En su fecha de creación tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Diagnostico: </label>
+                <input type="text" class="form-control" id="diagnoses" [(ngModel)]="historial.diagnoses"
+                    name="diagnoses" required minlength="4" maxlength="50" placeholder="Digite el diagnostico"
+                    #diagnoses="ngModel">
+                <div class="alert alert-danger" *ngIf="diagnoses.invalid && (diagnoses.dirty || diagnoses.touched)">
+                    <div *ngIf="diagnoses.errors['required']">
+                        Digite el diagnoses por favor
+                    </div>
+                    <div *ngIf="diagnoses.errors['minimo']">
+                        El diagnoses tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="diagnoses.errors['maximo']">
+                        El diagnoses tiene que tener como maximo 50 caracteres
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Tratamiento: </label>
+                <input type="text" class="form-control" id="treatments" [(ngModel)]="historial.treatments"
+                    name="treatments" required minlength="10" maxlength="50" placeholder="Digite el tratamiento"
+                    #treatments="ngModel">
+                <div class="alert alert-danger" *ngIf="treatments.invalid && (treatments.dirty || treatments.touched)">
+                    <div *ngIf="treatments.errors['required']">
+                        Digite el tratamiento por favor
+                    </div>
+                    <div *ngIf="treatments.errors['minimo']">
+                        El tratamiento tiene que contener como minimo 10 caracteres
+                    </div>
+                    <div *ngIf="treatments.errors['maximo']">
+                        El tratamiento tiene que tener como maximo 50 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Nota Medica: </label>
+                <input type="text" class="form-control" id="medicalNotes" [(ngModel)]="historial.medicalNotes"
+                    name="medicalNotes" required minlength="10" maxlength="50" placeholder="Digite la nota medica"
+                    #medicalNotes="ngModel">
+                <div class="alert alert-danger"
+                    *ngIf="medicalNotes.invalid && (medicalNotes.dirty || medicalNotes.touched)">
+                    <div *ngIf="medicalNotes.errors['required']">
+                        Digite la nota medica por favor
+                    </div>
+                    <div *ngIf="medicalNotes.errors['minimo']">
+                        La nota medica tiene que contener como minimo 10 caracteres
+                    </div>
+                    <div *ngIf="medicalNotes.errors['maximo']">
+                        La nota medica tiene que tener como maximo 50 caracteres
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!pacienteForm.valid">Guardar cambios</button>
+    </form>
+
+</div>
