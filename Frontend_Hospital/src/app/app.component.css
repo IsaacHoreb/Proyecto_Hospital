@@ -1,0 +1,20 @@
+/* Estilos personalizados para el menú desplegable */
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important; /* Color del texto */
+    text-decoration: none !important; /* Desactivar subrayado */
+  }
+  
+  .dropdown-menu {
+    background-color: #343a40; /* Color de fondo */
+  }
+  
+  .dropdown-item {
+    color: #ffffff !important; /* Color del texto de los elementos del menú */
+    text-decoration: none !important; /* Desactivar subrayado */
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: #555; /* Color de fondo al pasar el ratón o enfocar */
+  }
+  
