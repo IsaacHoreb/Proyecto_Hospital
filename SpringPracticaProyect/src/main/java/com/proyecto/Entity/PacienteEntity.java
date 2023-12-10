@@ -51,7 +51,7 @@ public class PacienteEntity {
     private String phone;
 
     @NotBlank(message = "El historial medico no puede estar vacio...")
-    @Column(name = "medical_historial", columnDefinition = "VARCHAR(100)", nullable = false)
+    @Column(name = "medical_historial", columnDefinition = "VARCHAR(200)", nullable = false)
     private String medicalHistory;
 
     @OneToMany(targetEntity = CitasEntity.class, mappedBy = "paciente",fetch = FetchType.LAZY,cascade = CascadeType.ALL)

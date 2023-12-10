@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HistorialServicesImpl implements HistorialServices {
 
@@ -67,6 +69,11 @@ public class HistorialServicesImpl implements HistorialServices {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
+    }
+
+    @Override
+    public List<HistorialEntity> listarHistorial() throws Exception {
+         return historialRepository.findAll();
     }
 
 }
