@@ -21,6 +21,7 @@ import { DetallesPacientesComponent } from './detalles-pacientes/detalles-pacien
 import { ListarHistorialComponent } from './listar-historial/listar-historial.component';
 import { RegistarHistorialComponent } from './registar-historial/registar-historial.component';
 import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-historial.component';
+import { DetallesHistorialComponent } from './detalles-historial/detalles-historial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-
     DetallesPacientesComponent,
     ListarHistorialComponent,
     RegistarHistorialComponent,
-    ActualizarHistorialComponent
+    ActualizarHistorialComponent,
+    DetallesHistorialComponent
   ],
   imports: [
     BrowserModule,
