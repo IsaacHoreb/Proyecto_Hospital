@@ -33,7 +33,7 @@ export class HistorialService {
   eliminarHistorialPorId(id: number): Observable<any> {
     return this.httpClient.delete(`${this.baseURL}/delete/${id}`, { responseType: 'text' }).pipe(
       catchError((error: any) => {
-        console.error('Error al eliminar el médico:', error);
+        console.error('Error al eliminar el historial:', error);
         throw error; // Puedes manejar el error de otra manera según tus necesidades
       }));
   }
