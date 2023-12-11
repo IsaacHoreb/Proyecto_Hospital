@@ -13,6 +13,7 @@ import { RegistarHistorialComponent } from './registar-historial/registar-histor
 import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-historial.component';
 import { DetallesHistorialComponent } from './detalles-historial/detalles-historial.component';
 import { ListarCitasComponent } from './listar-citas/listar-citas.component';
+import { RegistarCitasComponent } from './registar-citas/registar-citas.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -24,16 +25,17 @@ const routes: Routes = [
   { path: 'medicoDetalles/:id', component: DetallesMedicosComponent },
   //Rutas de Pacientes
   { path: 'pacientes', component: ListarPacientesComponent },
-  { path: 'registarPacientes', component: RegistarPacientesComponent },
+  { path: 'registrarPacientes', component: RegistarPacientesComponent },
   { path: 'actualizarPacientes/:id', component: ActualizarPacientesComponent },
   { path: 'pacienteDetalles/:id', component: DetallesPacientesComponent },
   //Rutas de Historial
   { path: 'historial', component: ListarHistorialComponent },
-  { path: 'registarHistorial', component: RegistarHistorialComponent },
+  { path: 'registrarHistorial', component: RegistarHistorialComponent },
   { path: 'actualizarHistorial/:id', component: ActualizarHistorialComponent },
   { path: 'historialDetalles/:id', component: DetallesHistorialComponent },
   //Rutas de Citas
-  { path: 'citas', component: ListarCitasComponent }
+  { path: 'citas', component: ListarCitasComponent },
+  { path: 'registrarCitas', component: RegistarCitasComponent}
 ];
 
 @NgModule({
