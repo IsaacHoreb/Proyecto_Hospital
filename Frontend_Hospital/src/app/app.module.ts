@@ -23,6 +23,7 @@ import { RegistarHistorialComponent } from './registar-historial/registar-histor
 import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-historial.component';
 import { DetallesHistorialComponent } from './detalles-historial/detalles-historial.component';
 import { ListarCitasComponent } from './listar-citas/listar-citas.component';
+import { RegistarCitasComponent } from './registar-citas/registar-citas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ListarCitasComponent } from './listar-citas/listar-citas.component';
     RegistarHistorialComponent,
     ActualizarHistorialComponent,
     DetallesHistorialComponent,
-    ListarCitasComponent
+    ListarCitasComponent,
+    RegistarCitasComponent
   ],
   imports: [
     BrowserModule,
