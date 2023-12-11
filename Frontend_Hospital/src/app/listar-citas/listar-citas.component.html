@@ -1,1 +1,30 @@
-<p>listar-citas works!</p>
+<h2 class="text-center">Lista de Citas</h2>
+
+<div class="table-container">
+
+    <table class="table table-striped">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Fecha Asignada</th>
+                <th>Horarios</th>
+                <th>Motivo</th>
+                <th>Status</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let cita of citas">
+                <td>{{cita.date}}</td>
+                <td>{{cita.hour}} </td>
+                <td>{{cita.motive}} </td>
+                <td>{{cita.stated}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
