@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CitasServicesImpl implements CitasServices {
 
@@ -67,4 +69,10 @@ public class CitasServicesImpl implements CitasServices {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
+
+    @Override
+    public List<CitasEntity> listarCitas() throws Exception {
+        return citasRepository.findAll();
+    }
+
 }
