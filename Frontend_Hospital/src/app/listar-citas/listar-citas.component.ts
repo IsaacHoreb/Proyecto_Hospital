@@ -26,5 +26,8 @@ export class ListarCitasComponent implements OnInit {
     }), error => console.log(error);
   }
 
+  actualizarCitas(id: number) {
+    this.router.navigate(['/actualizarCitas', id]);
+  }
 
 }
