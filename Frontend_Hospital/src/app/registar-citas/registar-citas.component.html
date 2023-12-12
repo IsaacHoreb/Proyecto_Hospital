@@ -1,1 +1,75 @@
-<p>registar-citas works!</p>
+<div class="col-md-8 offset-md-2">
+
+    <h3 class="text-center">Registro de Citas</h3>
+
+    <form (ngSubmit)="onSubmit()" #citasForm="ngForm">
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Fecha Asignada: </label>
+                <input type="text" class="form-control" id="date" [(ngModel)]="citas.date" name="date" required
+                    minlength="4" maxlength="20" placeholder="Digite la fecha asignada" #date="ngModel">
+                <div class="alert alert-danger" *ngIf="date.invalid && (date.dirty || date.touched)">
+                    <div *ngIf="date.errors['required']">
+                        Digite la fecha por favor
+                    </div>
+                    <div *ngIf="date.errors['minimo']">
+                        En su fecha tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="date.errors['maximo']">
+                        En su fecha tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Horario: </label>
+                <input type="text" class="form-control" id="hour" [(ngModel)]="citas.hour" name="hour" required
+                    minlength="4" maxlength="20" placeholder="Digite la hora asignada" #hour="ngModel">
+                <div class="alert alert-danger" *ngIf="hour.invalid && (hour.dirty || hour.touched)">
+                    <div *ngIf="hour.errors['required']">
+                        Digite la hora por favor
+                    </div>
+                    <div *ngIf="hour.errors['minimo']">
+                        En su hora tiene que contener como minimo 4 caracteres
+                    </div>
+                    <div *ngIf="hour.errors['maximo']">
+                        En su hora tiene que tener como maximo 10 caracteres
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Motivo: </label>
+                <select class="form-control" id="motive" [(ngModel)]="citas.motive" name="motive" required>
+                    <option value="" disabled selected>Seleccione un motivo</option>
+                    <option *ngFor="let motivo of motives" [value]="motivo">{{ motivo }}
+                    </option>
+                </select>
+                <div class="alert alert-danger" *ngIf="!citas.motive || citas.motive.length===0">
+                    Seleccione un motivo por favor
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Estatus: </label>
+                <select class="form-control" id="stated" [(ngModel)]="citas.stated" name="stated" required>
+                    <option value="" disabled selected>Seleccione un estatus</option>
+                    <option *ngFor="let status of stated" [value]="status">{{ status }}
+                    </option>
+                </select>
+                <div class="alert alert-danger" *ngIf="!citas.stated || citas.stated.length===0">
+                    Seleccione un estatus por favor
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-success" [disabled]="!citasForm.valid">Guardar</button>
+
+    </form>
+
+</div>
