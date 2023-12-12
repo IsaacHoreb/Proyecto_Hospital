@@ -17,6 +17,7 @@ import { RegistarCitasComponent } from './registar-citas/registar-citas.componen
 import { ActualizarCitasComponent } from './actualizar-citas/actualizar-citas.component';
 import { DetallesCitasComponent } from './detalles-citas/detalles-citas.component';
 import { ListarDepartamentosComponent } from './listar-departamentos/listar-departamentos.component';
+import { RegistrarDepartamentosComponent } from './registrar-departamentos/registrar-departamentos.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'actualizarCitas/:id', component: ActualizarCitasComponent },
   { path: 'citasDetalles/:id', component: DetallesCitasComponent },
   //Rutas del Departamentos
-  { path: 'departamentos', component: ListarDepartamentosComponent }
+  { path: 'departamentos', component: ListarDepartamentosComponent },
+  { path: 'registrarDepartamentos', component: RegistrarDepartamentosComponent }
 ];
 
 @NgModule({
