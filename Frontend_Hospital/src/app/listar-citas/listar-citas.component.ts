@@ -30,4 +30,8 @@ export class ListarCitasComponent implements OnInit {
     this.router.navigate(['/actualizarCitas', id]);
   }
 
+  verDetallesCitas(id: number) {
+    this.router.navigate(['/citasDetalles', id]);
+  }
+
 }
