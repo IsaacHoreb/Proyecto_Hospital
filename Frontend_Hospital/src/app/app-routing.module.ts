@@ -14,6 +14,7 @@ import { ActualizarHistorialComponent } from './actualizar-historial/actualizar-
 import { DetallesHistorialComponent } from './detalles-historial/detalles-historial.component';
 import { ListarCitasComponent } from './listar-citas/listar-citas.component';
 import { RegistarCitasComponent } from './registar-citas/registar-citas.component';
+import { ActualizarCitasComponent } from './actualizar-citas/actualizar-citas.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'historialDetalles/:id', component: DetallesHistorialComponent },
   //Rutas de Citas
   { path: 'citas', component: ListarCitasComponent },
-  { path: 'registrarCitas', component: RegistarCitasComponent}
+  { path: 'registrarCitas', component: RegistarCitasComponent },
+  { path: 'actualizarCitas/:id', component: ActualizarCitasComponent }
 ];
 
 @NgModule({
