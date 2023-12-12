@@ -1,1 +1,28 @@
-<p>listar-departamentos works!</p>
+<h2 class="text-center">Lista de Historial</h2>
+
+<div class="table-container">
+
+    <table class="table table-striped">
+
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>Nombre del Departamento</th>
+                <th>Descripcion</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody class="text-center">
+
+            <tr *ngFor="let depart of departamento">
+                <td>{{depart.nameDepartment}}</td>
+                <td>{{depart.description}}</td>
+            </tr>
+        
+        </tbody>
+
+    </table>
+
+</div>
