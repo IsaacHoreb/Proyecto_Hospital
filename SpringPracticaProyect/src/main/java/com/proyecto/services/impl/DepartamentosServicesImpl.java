@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DepartamentosServicesImpl implements DepartamentoServices {
 
@@ -80,5 +82,10 @@ public class DepartamentosServicesImpl implements DepartamentoServices {
         }
 
         return ResponseEntity.ok().body("El departamento con id: " + id + "\nha sido eliminado con éxito...");
+    }
+
+    @Override
+    public List<DepartamentosEntity> listarDepartamentos() throws Exception {
+        return departamentoRepository.findAll();
     }
 }

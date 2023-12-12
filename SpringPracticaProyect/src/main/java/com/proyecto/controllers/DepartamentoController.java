@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:4200") //Permite el intercambio de recursos entre API
 @RestController
 @RequestMapping(path = "/departamentos")
 public class DepartamentoController {
@@ -32,6 +35,18 @@ public class DepartamentoController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteDepaId(@PathVariable("id") Long id) throws Exception {
         return departamentoServices.eliminarDepartamentoId(id);
+    }
+
+    @GetMapping("/listAll")
+    public ResponseEntity<List<DepartamentosEntity>> listDepartamento() throws Exception{
+        List<DepartamentosEntity> list = departamentoServices.listarDepartamentos();
+
+        if (list.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(list);
+
     }
 
 }

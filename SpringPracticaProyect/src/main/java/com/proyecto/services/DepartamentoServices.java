@@ -3,6 +3,8 @@ package com.proyecto.services;
 import com.proyecto.Entity.DepartamentosEntity;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface DepartamentoServices {
 
     public ResponseEntity<DepartamentosEntity> guardarDepartamento(DepartamentosEntity departamentos) throws Exception;
@@ -12,5 +14,7 @@ public interface DepartamentoServices {
     public ResponseEntity<DepartamentosEntity> actualizarDepartamentoID(Long id, DepartamentosEntity detallesNuevo) throws Exception;
 
     public ResponseEntity<String> eliminarDepartamentoId(Long id) throws Exception;
+
+    public List<DepartamentosEntity> listarDepartamentos() throws Exception;
 
 }
