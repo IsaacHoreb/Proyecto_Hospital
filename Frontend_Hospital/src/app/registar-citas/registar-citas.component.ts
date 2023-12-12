@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Citas } from '../citas';
 import { CitasService } from '../citas.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registar-citas',
@@ -36,6 +37,7 @@ export class RegistarCitasComponent implements OnInit {
   //Metodo para ir a lista
   irListaCitas() {
     this.router.navigate(['/citas']);
+    swal('Cita Registrado', `La cita ha sido registrado con éxito`, 'success')
   }
 
   stated: string[] = ['CONFIRMADA', 'PENDIENTE', 'CANCELADA'];

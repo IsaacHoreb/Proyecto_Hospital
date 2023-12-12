@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pacientes } from '../pacientes';
 import { PacientesService } from '../pacientes.service';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 //import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -23,20 +24,21 @@ export class RegistarPacientesComponent implements OnInit {
   //Lo que usaremos en el HTML
   onSubmit() {
     this.guardarPacientes();
-    console.log(this.pacientes);
+    //console.log(this.pacientes);
   }
 
 
   //Metodos
   guardarPacientes() {
     this.pacienteService.registarPaciente(this.pacientes).subscribe(datos => {
-      console.log(datos);
+      //console.log(datos);
       this.irListaPacientes();
     }), error => console.log(error);
   }
 
   irListaPacientes() {
     this.router.navigate(['/pacientes']);
+    swal('Paciente Registrado', `El paciente ${this.pacientes.name} ha sido registrado con éxito`, 'success')
   }
 
   //Para tener los datos que quiero en el label

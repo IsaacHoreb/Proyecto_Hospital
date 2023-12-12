@@ -3,6 +3,7 @@ import { Medicos } from '../medicos';
 import { MedicoService } from '../medico.service';
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registar-medicos',
@@ -19,19 +20,20 @@ export class RegistarMedicosComponent implements OnInit {
 
   guardarMedicos() {
     this.medicoServicio.registarMedicos(this.medico).subscribe(datos => {
-      console.log(datos);
+      //console.log(datos);
       this.irListaMedicos();
     }), error => console.log(error);
   }
 
   irListaMedicos() {
     this.router.navigate(['/medicos']);
+    swal('Medico Registrado', `El medico ${this.medico.name} ha sido registrado con éxito`, 'success')
   }
 
 
   onSubmit() { //Para acceder a medico
     this.guardarMedicos();
-    console.log(this.medico)
+    //console.log(this.medico)
   }
 
   ngOnInit(): void {
