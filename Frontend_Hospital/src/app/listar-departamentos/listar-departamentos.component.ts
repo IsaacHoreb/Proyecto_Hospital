@@ -29,4 +29,8 @@ export class ListarDepartamentosComponent implements OnInit {
     this.router.navigate(['/actualizarDepartamento', id]);
   }
 
+  verDetallesDepartamentos(id: number) {
+    this.router.navigate(['/departamentoDetalles', id]);
+  }
+
 }
