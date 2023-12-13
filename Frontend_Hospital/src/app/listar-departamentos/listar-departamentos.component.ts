@@ -19,11 +19,14 @@ export class ListarDepartamentosComponent implements OnInit {
     this.obtenerDepart();
   }
 
-  private obtenerDepart(){
+  private obtenerDepart() {
     this.departaServices.obtenerListaDeDepartamentos().subscribe(d => {
       this.departamento = d;
-    }),e => console.log(e);
+    }), e => console.log(e);
   }
 
+  actualizarDepartamento(id: number) {
+    this.router.navigate(['/actualizarDepartamento', id]);
+  }
 
 }

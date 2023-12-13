@@ -1,4 +1,4 @@
-<h2 class="text-center">Lista de Historial</h2>
+<h2 class="text-center">Lista de Departamentos</h2>
 
 <div class="table-container">
 
@@ -19,8 +19,13 @@
             <tr *ngFor="let depart of departamento">
                 <td>{{depart.nameDepartment}}</td>
                 <td>{{depart.description}}</td>
+
+                <!--Button para las necesidades-->
+                <td>
+                    <button (click)="actualizarDepartamento(depart.id)" class="btn btn-info">Actualizar</button>
+                </td>
+                
             </tr>
-        
         </tbody>
 
     </table>

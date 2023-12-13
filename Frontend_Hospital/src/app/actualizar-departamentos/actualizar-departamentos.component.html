@@ -1,1 +1,48 @@
-<p>actualizar-departamentos works!</p>
+<div class="col-md-8 offset-md-2">
+
+    <h3 class="text-center">Actualizacion del Departamento</h3>
+
+    <form (ngSubmit)="onSubmit()" #depaForm="ngForm">
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label>Departamento: </label>
+                <select class="form-control" id="nameDepartment" [(ngModel)]="departamento.nameDepartment"
+                    name="nameDepartment" required>
+                    <option value="" disabled selected>Seleccione una departamento</option>
+                    <option *ngFor="let depart of nameDepartam " [value]="depart">{{ depart }}
+                    </option>
+                </select>
+                <div class="alert alert-danger"
+                    *ngIf="!departamento.nameDepartment || departamento.nameDepartment.length === 0">
+                    Seleccione un departamento favor
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Descripcion: </label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="departamento.description"
+                    name="description" required minlength="20" maxlength="100" placeholder="Digite una description"
+                    #description="ngModel">
+                <div class="alert alert-danger"
+                    *ngIf="description.invalid && (description.dirty || description.touched)">
+                    <div *ngIf="description.errors['required']">
+                        Digite la description por favor
+                    </div>
+                    <div *ngIf="description.errors['minimo']">
+                        La description tiene que contener como minimo 20 caracteres
+                    </div>
+                    <div *ngIf="description.errors['maximo']">
+                        La description tiene que tener como maximo 50 caracteres
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-success" [disabled]="!depaForm.valid">Guardar Cambios</button>
+
+    </form>
+
+</div>
