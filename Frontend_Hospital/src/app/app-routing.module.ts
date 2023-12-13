@@ -19,6 +19,7 @@ import { DetallesCitasComponent } from './detalles-citas/detalles-citas.componen
 import { ListarDepartamentosComponent } from './listar-departamentos/listar-departamentos.component';
 import { RegistrarDepartamentosComponent } from './registrar-departamentos/registrar-departamentos.component';
 import { ActualizarDepartamentosComponent } from './actualizar-departamentos/actualizar-departamentos.component';
+import { DetallesDepartamentosComponent } from './detalles-departamentos/detalles-departamentos.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -46,7 +47,8 @@ const routes: Routes = [
   //Rutas del Departamentos
   { path: 'departamentos', component: ListarDepartamentosComponent },
   { path: 'registrarDepartamentos', component: RegistrarDepartamentosComponent },
-  { path: 'actualizarDepartamento/:id', component: ActualizarDepartamentosComponent }
+  { path: 'actualizarDepartamento/:id', component: ActualizarDepartamentosComponent },
+  { path: 'departamentoDetalles/:id', component: DetallesDepartamentosComponent }
 ];
 
 @NgModule({
