@@ -28,6 +28,7 @@ import { ActualizarCitasComponent } from './actualizar-citas/actualizar-citas.co
 import { DetallesCitasComponent } from './detalles-citas/detalles-citas.component';
 import { ListarDepartamentosComponent } from './listar-departamentos/listar-departamentos.component';
 import { RegistrarDepartamentosComponent } from './registrar-departamentos/registrar-departamentos.component';
+import { ActualizarDepartamentosComponent } from './actualizar-departamentos/actualizar-departamentos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { RegistrarDepartamentosComponent } from './registrar-departamentos/regis
     ActualizarCitasComponent,
     DetallesCitasComponent,
     ListarDepartamentosComponent,
-    RegistrarDepartamentosComponent
+    RegistrarDepartamentosComponent,
+    ActualizarDepartamentosComponent
   ],
   imports: [
     BrowserModule,
