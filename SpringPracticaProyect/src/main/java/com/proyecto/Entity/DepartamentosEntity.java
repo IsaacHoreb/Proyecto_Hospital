@@ -24,7 +24,7 @@ public class DepartamentosEntity {
 
     @NotNull(message = "El nombre del departamento no puede estar vacio...")
     @Enumerated(EnumType.STRING)
-    @Column(name = "name_department", columnDefinition = "VARCHAR(15)", nullable = false, unique = true)
+    @Column(name = "name_department", columnDefinition = "VARCHAR(25)", nullable = false, unique = true)
     private EName nameDepartment;
 
     @NotBlank(message = "La descripcion no puede estar vacio...")
