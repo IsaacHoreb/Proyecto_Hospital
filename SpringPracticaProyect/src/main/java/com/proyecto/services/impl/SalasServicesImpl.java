@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SalasServicesImpl implements SalasServices {
 
@@ -67,6 +69,11 @@ public class SalasServicesImpl implements SalasServices {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
+    }
+
+    @Override
+    public List<SalasEntity> listarSalas() throws Exception {
+       return salasRepository.findAll();
     }
 
 }

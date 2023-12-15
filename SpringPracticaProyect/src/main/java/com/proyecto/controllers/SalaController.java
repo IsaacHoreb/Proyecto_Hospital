@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:4200") //Permite el intercambio de recursos entre API
 @RestController
 @RequestMapping(path = "/salas")
 public class SalaController {
@@ -32,6 +35,18 @@ public class SalaController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteSalaId(@PathVariable("id") Long id) throws Exception {
         return salasServices.eliminarSalaId(id);
+    }
+
+    @GetMapping("/listAll")
+    public ResponseEntity<List<SalasEntity>> listarSala() throws Exception{
+        List<SalasEntity> lista = salasServices.listarSalas();
+
+        if (lista.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(lista);
+
     }
 
 }
