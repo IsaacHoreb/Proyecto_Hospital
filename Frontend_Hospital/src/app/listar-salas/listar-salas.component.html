@@ -19,6 +19,12 @@
 
             <tr *ngFor="let salita of sala">
                 <td>{{salita.type}}</td>
+
+                <!--Button para las necesidades-->
+                <td>
+                    <button (click)="actualializarSalaPorID(salita.id)" class="btn btn-info">Actualizar</button>
+                </td>
+
             </tr>
 
         </tbody>

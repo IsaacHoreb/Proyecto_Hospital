@@ -25,4 +25,8 @@ export class ListarSalasComponent implements OnInit {
     }), error => console.log(error);
   }
 
+  actualializarSalaPorID(id: number){
+    this.router.navigate(['/actualizarSala',id])
+  }
+
 }
