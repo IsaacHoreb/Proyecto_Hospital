@@ -1,8 +1,10 @@
 export class Salas {
+    id: number;
     tipos: string[];
 
-    setTipos(tipos: string) {
-        this.tipos = [tipos];
+    
+    setTipos(tipo: string) {
+        this.tipos = [tipo];
     }
 
 }

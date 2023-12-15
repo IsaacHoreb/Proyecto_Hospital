@@ -1,1 +1,28 @@
-<p>listar-salas works!</p>
+<h2 class="text-center">Lista de Salas</h2>
+
+<div class="table-container">
+
+    <table class="table table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>Tipo de Sala</th>
+                <th>Editar</th>
+                <th>Detalles</th>
+                <th>Eliminar</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let salita of sala">
+                <td>{{salita.tipos}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
