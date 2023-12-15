@@ -23,6 +23,7 @@ import { DetallesDepartamentosComponent } from './detalles-departamentos/detalle
 import { ListarSalasComponent } from './listar-salas/listar-salas.component';
 import { RegistrarSalasComponent } from './registrar-salas/registrar-salas.component';
 import { ActualizarSalasComponent } from './actualizar-salas/actualizar-salas.component';
+import { DetallesSalasComponent } from './detalles-salas/detalles-salas.component';
 
 //Ingresamos lo sig para el añadido del URL
 const routes: Routes = [
@@ -55,7 +56,8 @@ const routes: Routes = [
   //Rutas de Salas
   { path: 'salas', component: ListarSalasComponent },
   { path: 'registrarSalas', component: RegistrarSalasComponent },
-  { path: 'actualizarSala/:id', component: ActualizarSalasComponent }
+  { path: 'actualizarSala/:id', component: ActualizarSalasComponent },
+  { path: 'salaDetalles/:id', component: DetallesSalasComponent }
 ];
 
 @NgModule({
