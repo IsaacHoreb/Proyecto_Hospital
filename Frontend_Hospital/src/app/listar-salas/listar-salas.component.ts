@@ -16,7 +16,13 @@ export class ListarSalasComponent implements OnInit {
   constructor(private salaServices: SalasService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.obtenerSalaLista();
+  }
+
+  private obtenerSalaLista() {
+    this.salaServices.obtenerListaDeSalas().subscribe(dato => {
+      this.sala = dato;
+    }), error => console.log(error);
   }
 
 }
