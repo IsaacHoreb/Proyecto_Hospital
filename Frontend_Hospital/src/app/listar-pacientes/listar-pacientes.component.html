@@ -17,27 +17,30 @@
             </tr>
 
         </thead>
-        <tr *ngFor="let paciente of pacientes">
-            <td>{{paciente.name}}</td>
-            <td>{{paciente.lastName}}</td>
-            <td>{{paciente.dateBirth}}</td>
-            <td>{{paciente.genero}}</td>
-            <td>{{paciente.address}}</td>
-            <td>{{paciente.phone}}</td>
-            <td>{{paciente.medicalHistory}}</td>
 
-            <!--Button para las necesidades-->
-            <td>
-                <button (click)="actualizarPaciente(paciente.id)" class="btn btn-info">Actualizar</button>
-            </td>
-            <td>
-                <button (click)="detallesPaciente(paciente.id)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
-            </td>
-            <td>
-                <button (click)="eliminarPaciente(paciente.id)" class="btn btn-danger"style="margin-left: 10px;">Eliminar</button>
-            </td>
-        </tr>
         <tbody>
+            <tr *ngFor="let paciente of pacientes">
+                <td>{{paciente.name}}</td>
+                <td>{{paciente.lastName}}</td>
+                <td>{{paciente.dateBirth}}</td>
+                <td>{{paciente.genero}}</td>
+                <td>{{paciente.address}}</td>
+                <td>{{paciente.phone}}</td>
+                <td>{{paciente.medicalHistory}}</td>
+
+                <!--Button para las necesidades-->
+                <td>
+                    <button (click)="actualizarPaciente(paciente.id)" class="btn btn-info">Actualizar</button>
+                </td>
+                <td>
+                    <button (click)="detallesPaciente(paciente.id)" class="btn btn-primary"
+                        style="margin-left: 10px;">Detalles</button>
+                </td>
+                <td>
+                    <button (click)="eliminarPaciente(paciente.id)" class="btn btn-danger"
+                        style="margin-left: 10px;">Eliminar</button>
+                </td>
+            </tr>
 
         </tbody>
     </table>
