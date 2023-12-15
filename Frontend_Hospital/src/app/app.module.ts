@@ -30,6 +30,7 @@ import { ListarDepartamentosComponent } from './listar-departamentos/listar-depa
 import { RegistrarDepartamentosComponent } from './registrar-departamentos/registrar-departamentos.component';
 import { ActualizarDepartamentosComponent } from './actualizar-departamentos/actualizar-departamentos.component';
 import { DetallesDepartamentosComponent } from './detalles-departamentos/detalles-departamentos.component';
+import { ListarSalasComponent } from './listar-salas/listar-salas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { DetallesDepartamentosComponent } from './detalles-departamentos/detalle
     ListarDepartamentosComponent,
     RegistrarDepartamentosComponent,
     ActualizarDepartamentosComponent,
-    DetallesDepartamentosComponent
+    DetallesDepartamentosComponent,
+    ListarSalasComponent
   ],
   imports: [
     BrowserModule,
